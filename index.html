@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Açaí Brasil SJ — Brazilian Açaí Bowls · San Jose &amp; the South Bay</title>
+<meta name="description" content="Real Brazilian açaí bowls from Açaí Brasil SJ, a family owned local business. Find us around San Jose, Sunnyvale and Palo Alto — farmers markets, parks and street stops. Catering and private events across the South Bay.">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Açaí Brasil SJ">
+<meta property="og:title" content="Açaí Brasil SJ — Brazilian Açaí Bowls in San Jose">
+<meta property="og:description" content="Thick, cold, real Brazilian açaí, made fresh one bowl at a time. See where we are today.">
+<meta property="og:url" content="https://acaibrasilsj.com/">
+<meta property="og:image" content="https://acaibrasilsj.com/img/og-cover.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#5D1C8C">
+<link rel="canonical" href="https://acaibrasilsj.com/">
+<link rel="icon" href="img/favicon.png">
+<link rel="preload" href="fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+/* Self-hosted so the page renders identically on every device and browser.
+   Poppins, SIL Open Font License 1.1 — free for commercial use.
+   No Google Fonts request, no third-party dependency, nothing to maintain. */
+@font-face{font-family:"Poppins";src:url("fonts/poppins-400.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/poppins-500.woff2") format("woff2");
+  font-weight:500 600;font-style:normal;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/poppins-700.woff2") format("woff2");
+  font-weight:700 900;font-style:normal;font-display:swap}
+</style>
+<style>
+:root{
+  --p-900:#3B0F5C; --p-700:#5D1C8C; --p-600:#7527B0;
+  --p-500:#8B2FC9; --p-400:#A855F7; --p-100:#F3E8FF; --p-050:#FAF5FF;
+  --lime:#8BC63F; --gold:#FFC93C; --berry:#E11D74;
+  --blush:#F9D8E5; --blush-ink:#6B1550;
+  --ink:#231033; --muted:#6E5A80; --line:#EADCF5; --white:#fff;
+  --r:26px; --r-sm:16px;
+  --sh:0 6px 28px rgba(93,28,140,.13);
+  --sh-lg:0 18px 60px rgba(93,28,140,.28);
+  --font:"Poppins",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--font);font-size:17px;
+     line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.1;margin:0 0 .5em;letter-spacing:-.025em;font-weight:900}
+h2{font-size:clamp(27px,5.5vw,40px);color:var(--p-700)}
+h3{font-size:20px;color:var(--p-700)}
+p{margin:0 0 1em}
+a{color:var(--p-600)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+section{padding:58px 0}
+.tint{background:var(--p-050)}
+.center{text-align:center}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--p-600);
+  color:#fff;text-decoration:none;font-weight:900;padding:16px 30px;border-radius:100px;border:none;
+  cursor:pointer;font-size:17px;font-family:inherit;min-height:54px;
+  transition:transform .15s,box-shadow .15s,background .15s;box-shadow:0 4px 16px rgba(117,39,176,.3)}
+.btn:hover{background:var(--p-500);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#4A3300;box-shadow:0 4px 16px rgba(255,201,60,.45)}
+.btn-lime{background:var(--lime);color:#213B00;box-shadow:0 4px 16px rgba(139,198,63,.4)}
+.btn-block{width:100%;max-width:440px}
+
+/* ── Top bar ── */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(93,28,140,.97);
+        -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 2px 14px rgba(59,15,92,.3)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:12px}
+.topbar .mark{display:flex;align-items:center;gap:9px;color:#fff;text-decoration:none;
+              font-weight:900;font-size:17px;white-space:nowrap}
+@media(max-width:430px){.topbar .mark{font-size:15px;gap:7px}}
+@media(max-width:345px){.topbar .wrap{padding:0 12px;gap:8px}
+                        .topbar .mark{font-size:13px;gap:5px}
+                        .topbar .flags{gap:4px}
+                        .lang button{padding:7px 11px}}
+.topbar .mark img{height:32px;width:auto}
+/* Flag heights are multiples of 13 on purpose: 13 stripes x a whole number of pixels
+   puts every stripe edge on a pixel boundary. 39px = 3px a stripe, 26px = 2px a stripe.
+   Anything in between turns the stripes grey and smeary. The star field swaps to a
+   larger, sparser set below 700px, because 11 stars cannot render at 26px. */
+.topbar .flags{display:inline-flex;gap:6px;align-items:center}
+.topbar .flags svg{height:39px;width:auto;display:block;border-radius:2.5px}
+.topbar .flags .s-sm{display:none}
+.topbar .mark img{display:none}
+@media(max-width:700px){.topbar .flags svg{height:26px}
+                        .topbar .flags .s-lg{display:none}
+                        .topbar .flags .s-sm{display:inline}}
+.lang{display:flex;gap:3px;background:rgba(255,255,255,.16);padding:3px;border-radius:100px}
+.lang button{border:none;background:transparent;font-family:inherit;font-weight:900;font-size:13px;
+             padding:7px 14px;border-radius:100px;cursor:pointer;color:#fff;min-height:34px}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--p-700)}
+
+/* ══ HERO — appetite first: logo centre, food photos flanking ══ */
+.hero{position:relative;color:#fff;padding:34px 0 56px;overflow:hidden;background:
+  radial-gradient(120% 90% at 12% 0%, var(--p-400) 0%, transparent 55%),
+  radial-gradient(110% 85% at 92% 18%, var(--berry) 0%, transparent 45%),
+  linear-gradient(165deg, var(--p-600) 0%, var(--p-700) 45%, var(--p-900) 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;background:#fff;
+  border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .wrap{position:relative;z-index:2;max-width:1160px}
+
+.hgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-items:center}
+.hmid{grid-column:1/-1;text-align:center}
+.hgrid .shot{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:18px;
+  box-shadow:0 14px 38px rgba(0,0,0,.36);border:3px solid rgba(255,255,255,.92)}
+.hgrid .shot:nth-of-type(1){transform:translateY(14px) rotate(-2deg)}
+.hgrid .shot:nth-of-type(2){transform:translateY(-14px) rotate(2deg)}
+@media(min-width:900px){
+  .hgrid{grid-template-columns:268px 1fr 268px;gap:34px}
+  .hmid{grid-column:2;grid-row:1}
+  .hgrid .shot:nth-of-type(1){grid-column:1;grid-row:1}
+  .hgrid .shot:nth-of-type(2){grid-column:3;grid-row:1}
+  .hgrid .shot{border-radius:24px}
+  .hgrid .shot:nth-of-type(1){transform:translateY(34px) rotate(-2.5deg)}
+  .hgrid .shot:nth-of-type(2){transform:translateY(-34px) rotate(2.5deg)}
+}
+.hero-logo{width:min(320px,68vw);margin:0 auto 12px;filter:drop-shadow(0 8px 26px rgba(0,0,0,.32))}
+.family{display:inline-block;background:var(--blush);color:var(--blush-ink);font-weight:900;
+  font-size:clamp(11px,3vw,14px);letter-spacing:.055em;text-transform:uppercase;
+  padding:9px 22px;border-radius:100px;margin:0 auto 16px;line-height:1.35;max-width:min(100%,420px);
+  box-shadow:0 4px 18px rgba(249,216,229,.35)}
+.hero h1{font-size:clamp(24px,5vw,36px);color:#fff;margin-bottom:10px;text-wrap:balance}
+.hero .lede{font-size:clamp(15.5px,2.1vw,18px);opacity:.93;max-width:520px;margin:0 auto 16px}
+.pills{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;
+      padding:6px 14px;font-size:13.5px;font-weight:800}
+
+/* ── TODAY — the one thing that must be instantly visible ── */
+.todayrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;
+          max-width:620px;margin:24px auto 0;align-items:center}
+.todayrow .today{grid-column:1/-1;grid-row:1}
+.todayrow .side:nth-of-type(1){grid-column:1;grid-row:2}
+.todayrow .side:nth-of-type(2){grid-column:2;grid-row:2}
+.todayrow details.week{grid-column:1/-1;grid-row:3}
+.todayrow .side{aspect-ratio:1/1;object-fit:cover;width:100%;border-radius:15px;
+  box-shadow:0 11px 30px rgba(0,0,0,.33);border:2.5px solid rgba(255,255,255,.92)}
+.todayrow .side:nth-of-type(1){transform:translateY(9px) rotate(-2deg)}
+.todayrow .side:nth-of-type(2){transform:translateY(-9px) rotate(2deg)}
+@media(min-width:820px){
+  .todayrow{grid-template-columns:212px minmax(0,1fr) 212px;gap:22px;max-width:980px}
+  .todayrow .today{grid-column:2;grid-row:1;margin:0}
+  .todayrow details.week{grid-column:2;grid-row:2;margin:12px 0 0}
+  .todayrow .side:nth-of-type(1){grid-column:1;grid-row:1/3}
+  .todayrow .side:nth-of-type(2){grid-column:3;grid-row:1/3}
+  .todayrow .side{border-radius:20px;aspect-ratio:4/5;border-width:3px}
+  /* The photos span rows 1/3, so the grid's align-items:center would re-centre them across the
+     today card AND the week accordion. Collapsed that is harmless, the photos are the tallest
+     thing in the span. Expanded, row 2 grows ~750px and the photos slide down with the centre
+     (measured: 361px at 1280, 497px at 900). Pinning them to the start freezes them without
+     changing the collapsed layout by a single pixel. Do not switch this back to center. */
+  .todayrow .side{align-self:start}
+  .todayrow .side:nth-of-type(1){transform:translateY(20px) rotate(-2.5deg)}
+  .todayrow .side:nth-of-type(2){transform:translateY(-20px) rotate(2.5deg)}
+}
+.today{background:#fff;color:var(--ink);border-radius:var(--r-sm);padding:16px 15px;
+       box-shadow:var(--sh-lg);border:3px solid var(--lime);
+       max-width:452px;margin:0 auto;text-align:center}
+.today .label{font-size:11px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;
+              color:var(--p-500);margin-bottom:9px}
+.today .spot{font-size:clamp(19px,4vw,26px);font-weight:900;color:var(--p-700);line-height:1.1;
+             margin:0 0 5px;letter-spacing:-.025em}
+.today .addr{color:var(--muted);margin:0;font-size:14.5px}
+.today .hours{display:inline-block;background:var(--gold);color:#4A3300;border-radius:100px;
+              padding:7px 17px;font-weight:900;margin:10px 0 12px;font-size:16px}
+.today .stamp{margin:11px 0 0;font-size:13px;color:var(--muted)}
+.today .soft{font-size:14.5px;color:var(--muted);margin:8px 0 0}
+.today.is-closed .spot{color:var(--muted)}
+.stop + .stop{margin-top:20px;padding-top:20px;border-top:2px dashed var(--line)}
+.skeleton{opacity:.5}
+
+/* ── Week: collapsed by default so it costs no real estate ── */
+details.week{max-width:452px;margin:12px auto 0;width:100%;border:1.5px solid var(--line);
+             border-radius:var(--r-sm);background:#fff;overflow:hidden}
+details.week summary{cursor:pointer;list-style:none;padding:13px 18px;font-weight:900;
+  color:var(--p-700);display:flex;justify-content:space-between;align-items:center;min-height:54px}
+details.week summary::-webkit-details-marker{display:none}
+details.week summary::after{content:"▾";font-size:15px;transition:transform .2s}
+details.week[open] summary::after{transform:rotate(180deg)}
+details.week ul{list-style:none;margin:0;padding:0 12px 12px}
+details.week li{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;
+                padding:12px 8px;border-top:1px solid var(--line)}
+details.week li.is-today{background:var(--p-100);border-radius:10px;border-top-color:transparent}
+details.week li.is-shut{opacity:.5}
+.week .day{font-weight:900;color:var(--p-700);font-size:14.5px}
+.week .stops{display:grid;gap:9px;min-width:0}
+.week .st{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.week .nm{font-weight:700;font-size:15.5px;color:var(--ink);min-width:0}
+.week .seas.all{background:#F2EEF8;color:var(--muted)}
+.week .seas{display:inline-block;margin-left:7px;font-size:11.5px;font-weight:900;color:var(--p-500);
+            background:var(--p-100);border-radius:100px;padding:2px 8px;vertical-align:1px;white-space:nowrap}
+.week .tm{color:var(--muted);font-size:14.5px;white-space:nowrap;font-weight:700;text-align:right}
+@media(max-width:600px){details.week li{grid-template-columns:1fr;row-gap:5px}
+                        .week .day{grid-column:1/-1}}
+.note{color:var(--muted);font-size:15px;margin-top:14px}
+
+/* ── What is açaí ── */
+.explain{background:linear-gradient(155deg,var(--p-600),var(--p-900));color:#fff;
+         border-radius:var(--r);padding:34px 28px;box-shadow:var(--sh-lg)}
+.explain h2{color:#fff;margin-bottom:.5em;text-align:center}
+.explain{padding:0;overflow:hidden}
+.scene{color:#fff;opacity:1;width:100%;padding:22px 10px 4px;
+       background:linear-gradient(180deg,rgba(0,0,0,.16),transparent)}
+.scene svg{width:100%;height:auto;max-height:330px;display:block}
+.extext{padding:6px 30px 34px}
+@media(min-width:900px){.extext{padding:10px 54px 42px;max-width:860px;margin:0 auto}}
+.explain h2 em{font-style:normal;color:var(--gold)}
+.explain p b{color:var(--gold);font-weight:900}
+.explain p{opacity:.94}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+      border-radius:100px;padding:8px 16px;font-size:14px;font-weight:800}
+.say{font-size:14px;opacity:.72;margin:14px 0 0}
+
+/* ── Menu ── */
+.bowls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:18px}
+.bowl{background:linear-gradient(160deg,var(--p-600),var(--p-900));color:#fff;border-radius:var(--r);
+      padding:26px 22px;text-align:center;box-shadow:var(--sh)}
+.bowl .sz{font-size:14px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;opacity:.85}
+.bowl .pr{font-size:54px;font-weight:900;line-height:1;margin:8px 0 4px;color:var(--gold)}
+.bowl .sc{opacity:.85;font-size:15px;margin:0}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:var(--r);padding:22px}
+.card + .card{margin-top:14px}
+.card .chip{background:var(--lime);color:#213B00;border:none}
+.item{display:flex;justify-content:space-between;gap:14px;padding:10px 0;align-items:baseline}
+.item + .item{border-top:1px dashed var(--line)}
+.item .pr{font-weight:900;color:var(--p-600);white-space:nowrap}
+
+/* ── Story ── */
+.story{max-width:660px;margin:0 auto;text-align:center;font-size:18.5px}
+.story .quote{font-size:clamp(19px,3vw,24px);font-weight:800;color:var(--p-700);line-height:1.45}
+.story .who{color:var(--muted);font-size:15px;font-weight:800;margin-top:14px}
+
+/* ── Gallery ── */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.gallery img{aspect-ratio:1/1;object-fit:cover;width:100%;border-radius:var(--r-sm);
+             box-shadow:var(--sh);transition:transform .2s}
+.gallery img:hover{transform:scale(1.03)}
+
+/* ── Catering ── */
+.catering{background:linear-gradient(160deg,var(--p-600),var(--p-900));color:#fff;
+          border-radius:var(--r);padding:34px 26px;box-shadow:var(--sh-lg)}
+.catering h2{color:#fff}
+form{display:grid;gap:13px;max-width:540px;margin:0 auto}
+label{font-weight:800;font-size:14.5px;display:block;margin-bottom:6px}
+input,textarea{width:100%;font-family:inherit;font-size:17px;padding:14px 16px;border:none;
+               border-radius:var(--r-sm);background:rgba(255,255,255,.95);color:var(--ink);min-height:54px}
+input:focus,textarea:focus{outline:3px solid var(--gold)}
+textarea{min-height:104px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+footer{background:var(--p-900);color:#fff;padding:44px 0 34px;text-align:center}
+footer img.fl{width:140px;margin:0 auto 14px}
+footer a{color:#fff;font-weight:800}
+.social{display:flex;gap:10px;justify-content:center;margin:18px 0;flex-wrap:wrap}
+.social a,.social button{background:rgba(255,255,255,.15);padding:13px 24px;border-radius:100px;
+          text-decoration:none;min-height:50px;display:inline-flex;align-items:center;
+          border:none;font-family:inherit;font-size:17px;font-weight:800;color:#fff;cursor:pointer}
+.social button:hover{background:rgba(255,255,255,.26)}
+.social .phone-out{background:var(--gold);color:#4A3300}
+.fine{opacity:.55;font-size:13px;margin-top:22px}
+
+/* Build notes. Hidden from every visitor — including the client — so an
+   unfinished page can never be shown or shipped by accident.
+   Add #todo to the URL to see them while you work. */
+.todo{display:none;background:#FFF8E1;border:2px dashed var(--gold);border-radius:var(--r-sm);
+      padding:14px 18px;margin:16px 0;font-size:15px;color:#6B5000;text-align:left}
+body.shownotes .todo{display:block}
+.todo b{color:#4A3800}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#"><span class="flags"><svg viewBox="0 0 38 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="United States"><defs><path id="us-s" d="M0-1 .225-.309.951-.309.363.118.588.809 0 .382-.588.809-.363.118-.951-.309-.225-.309Z"/></defs><g shape-rendering="crispEdges"><rect width="38" height="20" fill="#fff"/><g fill="#B31942"><rect y="0.0000" width="38" height="1.5385"/><rect y="3.0769" width="38" height="1.5385"/><rect y="6.1538" width="38" height="1.5385"/><rect y="9.2307" width="38" height="1.5385"/><rect y="12.3076" width="38" height="1.5385"/><rect y="15.3845" width="38" height="1.5385"/><rect y="18.4614" width="38" height="1.5385"/></g><rect width="15.2" height="10.7692" fill="#0A3161"/></g><g fill="#fff" class="s-lg"><use href="#us-s" transform="translate(2.356 2.262) scale(1.15)"/><use href="#us-s" transform="translate(5.852 2.262) scale(1.15)"/><use href="#us-s" transform="translate(9.348 2.262) scale(1.15)"/><use href="#us-s" transform="translate(12.844 2.262) scale(1.15)"/><use href="#us-s" transform="translate(4.104 5.385) scale(1.15)"/><use href="#us-s" transform="translate(7.600 5.385) scale(1.15)"/><use href="#us-s" transform="translate(11.096 5.385) scale(1.15)"/><use href="#us-s" transform="translate(2.356 8.508) scale(1.15)"/><use href="#us-s" transform="translate(5.852 8.508) scale(1.15)"/><use href="#us-s" transform="translate(9.348 8.508) scale(1.15)"/><use href="#us-s" transform="translate(12.844 8.508) scale(1.15)"/></g><g fill="#fff" class="s-sm"><use href="#us-s" transform="translate(3.648 3.231) scale(2.05)"/><use href="#us-s" transform="translate(7.600 3.231) scale(2.05)"/><use href="#us-s" transform="translate(11.552 3.231) scale(2.05)"/><use href="#us-s" transform="translate(3.648 7.754) scale(2.05)"/><use href="#us-s" transform="translate(7.600 7.754) scale(2.05)"/><use href="#us-s" transform="translate(11.552 7.754) scale(2.05)"/></g></svg><svg viewBox="0 0 30 21" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Brazil"><defs><clipPath id="br-g"><circle cx="15" cy="10.5" r="5.25"/></clipPath></defs><rect width="30" height="21" fill="#009C3B"/><path d="M15 2.55 27.45 10.5 15 18.45 2.55 10.5Z" fill="#FFDF00"/><circle cx="15" cy="10.5" r="5.25" fill="#002776"/><g clip-path="url(#br-g)"><g fill="#fff" class="s-lg"><circle cx="12.2" cy="7.3" r="0.5"/><circle cx="17.8" cy="6.9" r="0.42"/><circle cx="19.3" cy="9.4" r="0.5"/><circle cx="11.3" cy="12.7" r="0.42"/><circle cx="14.1" cy="14.2" r="0.5"/><circle cx="18.1" cy="13.5" r="0.42"/></g><g fill="#fff" class="s-sm"><circle cx="12.0" cy="7.3" r="0.62"/><circle cx="18.6" cy="8.6" r="0.55"/><circle cx="12.2" cy="13.4" r="0.55"/><circle cx="17.6" cy="13.8" r="0.62"/></g><path d="M8.5 13.4Q15.4 8.2 22.1 11.9" stroke="#fff" stroke-width="2.1" fill="none"/></g></svg></span><img src="img/logo-white.png" alt="">Açaí Brasil SJ</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hgrid">
+      <div class="hmid">
+        <img class="hero-logo" src="img/logo-white.png" alt="Açaí Brasil SJ — San Jose, CA">
+        <p class="family" data-i18n="family">Family owned &amp; operated local business</p>
+        <h1 data-i18n="heroTitle">Real Brazilian açaí, made fresh one bowl at a time</h1>
+        <p class="lede" data-i18n="heroLede">Thick, cold and never watered down. Every bowl loaded with banana, strawberry, blueberry, granola and honey.</p>
+        <div class="pills">
+          <span class="pill" data-i18n="pillOrganic">🌿 Organic açaí</span>
+          <span class="pill" data-i18n="pill1">🌱 Gluten-free granola</span>
+          <span class="pill" data-i18n="pill2">🥜 Nut-free bowls</span>
+          <span class="pill" data-i18n="pillDairy">🥛 Dairy-free</span>
+          <span class="pill" data-i18n="pill3">💳 Cards & cash</span>
+        </div>
+      </div>
+      <img class="shot" src="img/hero-a.jpg" alt="Açaí bowl topped with strawberries, blueberries and granola">
+      <img class="shot" src="img/hero-b.jpg" alt="Creamy açaí bowl piled with fresh fruit and granola">
+    </div>
+
+    <div class="todayrow">
+      <img class="side" src="img/side-truck.jpg" alt="The Açaí Brasil SJ trailer">
+      <div class="today skeleton" id="today" aria-live="polite">
+        <div class="label" data-i18n="todayLabel">Today you'll find us at</div>
+        <p class="spot">—</p>
+      </div>
+      <img class="side" src="img/side-tent.jpg" alt="The Açaí Brasil SJ stall at a farmers market">
+      <details class="week" id="weekBox">
+      <summary data-i18n="weekSummary">See the full week</summary>
+      <ul id="weekList"></ul>
+      </details>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══ MENU ═══ -->
+<section id="menu">
+  <div class="wrap">
+    <h2 class="center" data-i18n="menuTitle">The menu</h2>
+    <div class="bowls">
+      <div class="bowl"><div class="sz">12 oz</div><div class="pr">$12</div>
+        <p class="sc" data-i18n="scoops2">2 scoops</p></div>
+      <div class="bowl"><div class="sz">16 oz</div><div class="pr">$15</div>
+        <p class="sc" data-i18n="scoops3">3 scoops</p></div>
+    </div>
+    <div class="card">
+      <h3 data-i18n="includedTitle">Every bowl includes</h3>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="card">
+      <h3 data-i18n="addonsTitle">Add-ons</h3>
+      <div id="addons"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT IS AÇAÍ ═══ -->
+<section>
+  <div class="wrap">
+    <div class="explain">
+      <div class="scene" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" fill="none" stroke="currentColor" stroke-width="2.56" stroke-linecap="round" stroke-linejoin="round"><circle cx="360" cy="86" r="34" stroke-width="2.40" opacity="0.38"/><path d="M-20 196q23 -23 45 0M17 196q31 -22 61 0M68 196q24 -24 47 0M106 196q18 -23 36 0M136 196q26 -27 51 0M178 196q17 -20 33 0M205 196q17 -27 33 0M233 196q27 -16 54 0M277 196q32 -29 63 0M329 196q26 -24 52 0M371 196q18 -15 35 0M400 196q24 -16 48 0M440 196q18 -19 36 0M470 196q16 -22 31 0M495 196q22 -28 45 0M532 196q24 -25 48 0M571 196q23 -25 47 0M610 196q23 -19 46 0M647 196q32 -30 64 0" stroke-width="2.24" opacity="0.38"/><path d="M-20 206q29 -17 59 0M28 206q20 -12 41 0M61 206q20 -11 40 0M94 206q28 -14 56 0M140 206q29 -14 59 0M188 206q31 -18 63 0M240 206q15 -12 30 0M264 206q30 -15 61 0M314 206q32 -14 63 0M366 206q16 -16 32 0M393 206q28 -13 56 0M439 206q16 -13 33 0M466 206q31 -18 63 0M518 206q17 -12 34 0M545 206q17 -11 33 0M573 206q29 -12 57 0M620 206q25 -14 49 0M660 206q18 -17 36 0M690 206q17 -16 34 0" stroke-width="2.40" opacity="0.61"/><path d="M0 208H660" stroke-width="1.76" opacity="0.38"/><path d="M296 208C284 250 254 290 196 326 148 355 92 380 30 402" stroke-width="3.84"/><path d="M362 208C382 248 424 284 494 316 548 341 604 364 656 384" stroke-width="3.84"/><path d="M314 232q9 -5 17 0q9 5 17 0M298 258q13 -5 27 0q13 5 27 0M275 286q19 -5 37 0q19 5 37 0M244 314q24 -5 48 0q24 5 48 0M206 342q29 -5 58 0q29 5 58 0M160 372q34 -5 67 0q34 5 67 0" stroke-width="1.76" opacity="0.58"/><g opacity="0.72"><path d="M150 214 C149 177 147 166 146 140" stroke-width="1.92"/><path d="M147.4 204.8h4.2M147.0 195.5h4.1M146.5 186.2h3.9M146.1 177.0h3.8M145.7 167.8h3.6M145.3 158.5h3.5M144.8 149.2h3.3" stroke-width="0.80" opacity="0.65"/><path d="M146 140 Q132 133 118 143" stroke-width="1.44"/><path d="M141.1 138.0L143.9 134.6M141.1 138.0L141.8 142.4M138.6 137.4L141.4 133.1M138.6 137.4L139.9 142.4M136.0 137.2L138.5 132.2M136.0 137.2L138.1 142.3M133.5 137.1L135.4 131.9M133.5 137.1L136.2 142.1M131.0 137.4L132.3 132.3M131.0 137.4L134.0 141.8M128.4 138.0L129.1 133.2M128.4 138.0L131.5 141.7M125.8 138.8L126.0 134.6M125.8 138.8L128.8 141.7M123.2 139.9L123.1 136.6M123.2 139.9L125.8 142.0M120.6 141.3L120.3 138.9M120.6 141.3L122.7 142.7" stroke-width="0.88" opacity="1.00"/><path d="M146 140 Q135 125 124 124" stroke-width="1.44"/><path d="M142.0 135.0L146.2 133.7M142.0 135.0L140.2 139.1M140.0 132.9L144.8 131.0M140.0 132.9L138.2 137.7M138.0 130.9L143.0 128.7M138.0 130.9L136.4 136.2M136.0 129.3L140.9 126.6M136.0 129.3L134.7 134.7M134.0 127.8L138.5 124.9M134.0 127.8L133.2 133.1M132.0 126.6L135.8 123.6M132.0 126.6L131.7 131.4M130.0 125.6L133.0 122.7M130.0 125.6L130.1 129.8M128.0 124.8L130.2 122.3M128.0 124.8L128.4 128.2M126.0 124.3L127.4 122.3M126.0 124.3L126.6 126.7" stroke-width="0.88" opacity="1.00"/><path d="M146 140 Q142 122 138 109" stroke-width="1.44"/><path d="M144.7 133.6L149.1 134.5M144.7 133.6L141.1 136.3M144.0 130.6L149.1 131.6M144.0 130.6L139.9 133.7M143.3 127.6L148.8 128.6M143.3 127.6L138.9 131.0M142.6 124.7L148.1 125.6M142.6 124.7L138.2 128.1M141.9 121.9L147.1 122.7M141.9 121.9L137.8 125.2M141.1 119.1L145.9 119.8M141.1 119.1L137.4 122.2M140.4 116.5L144.5 117.0M140.4 116.5L137.2 119.2M139.6 113.9L142.9 114.3M139.6 113.9L137.1 116.1M138.8 111.4L141.3 111.7M138.8 111.4L137.0 113.1" stroke-width="0.88" opacity="1.00"/><path d="M146 140 Q150 122 156 109" stroke-width="1.44"/><path d="M147.7 133.6L151.1 136.4M147.7 133.6L143.3 134.3M148.5 130.6L152.5 133.9M148.5 130.6L143.4 131.3M149.3 127.6L153.5 131.2M149.3 127.6L143.9 128.3M150.2 124.7L154.4 128.3M150.2 124.7L144.7 125.4M151.1 121.9L155.0 125.4M151.1 121.9L145.8 122.5M151.9 119.1L155.5 122.4M151.9 119.1L147.1 119.6M152.8 116.5L155.9 119.3M152.8 116.5L148.7 116.9M153.7 113.9L156.1 116.2M153.7 113.9L150.4 114.2M154.6 111.4L156.3 113.1M154.6 111.4L152.1 111.6" stroke-width="0.88" opacity="1.00"/><path d="M146 140 Q158 126 170 124" stroke-width="1.44"/><path d="M150.4 135.2L151.9 139.3M150.4 135.2L146.2 133.6M152.5 133.1L154.1 138.0M152.5 133.1L147.8 131.0M154.7 131.2L156.1 136.5M154.7 131.2L149.8 128.6M156.9 129.5L157.9 135.0M156.9 129.5L152.1 126.7M159.1 128.0L159.7 133.3M159.1 128.0L154.7 125.0M161.3 126.8L161.5 131.6M161.3 126.8L157.5 123.8M163.5 125.8L163.3 130.0M163.5 125.8L160.4 122.9M165.6 125.0L165.2 128.3M165.6 125.0L163.4 122.4M167.8 124.4L167.3 126.8M167.8 124.4L166.4 122.4" stroke-width="0.88" opacity="1.00"/><path d="M146 140 Q160 134 176 144" stroke-width="1.44"/><path d="M151.3 138.3L150.3 142.7M151.3 138.3L148.7 134.7M154.0 137.9L152.3 142.8M154.0 137.9L151.4 133.4M156.7 137.8L154.4 142.8M156.7 137.8L154.4 132.7M159.4 137.9L156.6 142.7M159.4 137.9L157.6 132.6M162.1 138.2L159.0 142.6M162.1 138.2L160.9 133.0M164.9 138.8L161.7 142.5M164.9 138.8L164.2 134.0M167.6 139.7L164.7 142.7M167.6 139.7L167.4 135.6M170.4 140.9L167.8 143.1M170.4 140.9L170.5 137.5M173.2 142.3L171.2 143.8M173.2 142.3L173.4 139.9" stroke-width="0.88" opacity="1.00"/><path d="M145 142Q140 144 140 148" stroke-width="1.12"/><circle cx="137.3" cy="149.5" r="1.3" stroke-width="0.80"/><circle cx="140.0" cy="149.5" r="1.3" stroke-width="0.80"/><circle cx="142.7" cy="149.5" r="1.3" stroke-width="0.80"/><circle cx="138.7" cy="152.2" r="1.3" stroke-width="0.80"/><circle cx="141.3" cy="152.2" r="1.3" stroke-width="0.80"/><path d="M147 142Q152 144 152 148" stroke-width="1.12"/><circle cx="149.3" cy="149.5" r="1.3" stroke-width="0.80"/><circle cx="152.0" cy="149.5" r="1.3" stroke-width="0.80"/><circle cx="154.7" cy="149.5" r="1.3" stroke-width="0.80"/><circle cx="150.7" cy="152.2" r="1.3" stroke-width="0.80"/><circle cx="153.3" cy="152.2" r="1.3" stroke-width="0.80"/></g><g opacity="0.65"><path d="M252 212 C253 183 254 174 255 154" stroke-width="1.76"/><path d="M250.6 204.8h3.6M251.0 197.5h3.4M251.5 190.2h3.3M251.9 183.0h3.2M252.4 175.8h3.0M252.8 168.5h2.9M253.2 161.2h2.8" stroke-width="0.64" opacity="0.65"/><path d="M255 154 Q244 148 231 157" stroke-width="1.28"/><path d="M250.8 152.3L253.4 149.2M250.8 152.3L251.5 156.3M248.8 151.9L251.2 148.0M248.8 151.9L250.0 156.3M246.6 151.6L248.8 147.2M246.6 151.6L248.5 156.2M244.5 151.6L246.2 147.0M244.5 151.6L246.8 155.9M242.4 151.8L243.5 147.3M242.4 151.8L245.0 155.7M240.2 152.3L240.8 148.0M240.2 152.3L243.0 155.6M238.1 153.0L238.2 149.3M238.1 153.0L240.7 155.6M235.9 153.9L235.8 150.9M235.9 153.9L238.3 155.9M233.7 155.1L233.4 152.8M233.7 155.1L235.6 156.4" stroke-width="0.74" opacity="1.00"/><path d="M255 154 Q246 141 237 141" stroke-width="1.28"/><path d="M251.6 149.8L255.4 148.6M251.6 149.8L250.0 153.5M250.0 148.0L254.2 146.4M250.0 148.0L248.3 152.3M248.3 146.4L252.7 144.4M248.3 146.4L246.8 151.1M246.6 145.0L250.9 142.6M246.6 145.0L245.5 149.8M244.9 143.8L248.9 141.2M244.9 143.8L244.2 148.4M243.2 142.7L246.7 140.1M243.2 142.7L242.9 147.0M241.6 141.9L244.3 139.3M241.6 141.9L241.7 145.6M239.9 141.3L241.9 138.9M239.9 141.3L240.3 144.3M238.2 140.8L239.5 138.9M238.2 140.8L238.7 143.1" stroke-width="0.74" opacity="1.00"/><path d="M255 154 Q252 139 248 128" stroke-width="1.28"/><path d="M253.9 148.6L257.8 149.5M253.9 148.6L250.7 151.0M253.3 146.1L257.8 147.0M253.3 146.1L249.7 148.8M252.8 143.6L257.6 144.5M252.8 143.6L248.9 146.6M252.2 141.1L257.0 142.0M252.2 141.1L248.3 144.2M251.5 138.8L256.2 139.5M251.5 138.8L247.9 141.7M250.9 136.5L255.2 137.1M250.9 136.5L247.6 139.2M250.3 134.2L254.0 134.7M250.3 134.2L247.4 136.7M249.6 132.1L252.7 132.4M249.6 132.1L247.3 134.1M249.0 130.0L251.3 130.2M249.0 130.0L247.3 131.5" stroke-width="0.74" opacity="1.00"/><path d="M255 154 Q259 139 263 128" stroke-width="1.28"/><path d="M256.4 148.6L259.5 151.2M256.4 148.6L252.5 149.3M257.1 146.1L260.6 149.0M257.1 146.1L252.6 146.7M257.8 143.6L261.5 146.7M257.8 143.6L253.0 144.2M258.5 141.1L262.2 144.4M258.5 141.1L253.6 141.8M259.2 138.8L262.8 141.9M259.2 138.8L254.6 139.3M260.0 136.5L263.2 139.4M260.0 136.5L255.7 136.9M260.7 134.2L263.5 136.8M260.7 134.2L257.0 134.6M261.5 132.1L263.7 134.2M261.5 132.1L258.4 132.3M262.2 130.0L263.9 131.6M262.2 130.0L259.9 130.1" stroke-width="0.74" opacity="1.00"/><path d="M255 154 Q265 142 275 141" stroke-width="1.28"/><path d="M258.7 149.9L260.1 153.7M258.7 149.9L254.9 148.5M260.5 148.2L261.9 152.5M260.5 148.2L256.3 146.3M262.3 146.6L263.5 151.3M262.3 146.6L258.0 144.4M264.2 145.2L265.1 150.0M264.2 145.2L259.9 142.7M266.0 144.0L266.6 148.6M266.0 144.0L262.1 141.3M267.8 142.9L268.0 147.2M267.8 142.9L264.5 140.2M269.7 142.1L269.5 145.8M269.7 142.1L267.0 139.5M271.5 141.4L271.1 144.4M271.5 141.4L269.5 139.1M273.3 140.9L272.8 143.1M273.3 140.9L272.0 139.0" stroke-width="0.74" opacity="1.00"/><path d="M255 154 Q267 149 280 157" stroke-width="1.28"/><path d="M259.5 152.6L258.5 156.5M259.5 152.6L257.2 149.4M261.7 152.3L260.2 156.6M261.7 152.3L259.4 148.3M264.0 152.1L261.9 156.6M264.0 152.1L262.0 147.6M266.2 152.2L263.8 156.5M266.2 152.2L264.7 147.5M268.5 152.5L265.8 156.3M268.5 152.5L267.5 147.9M270.8 153.0L268.0 156.3M270.8 153.0L270.2 148.8M273.2 153.8L270.5 156.4M273.2 153.8L273.0 150.0M275.5 154.7L273.2 156.7M275.5 154.7L275.6 151.7M277.8 155.9L276.0 157.3M277.8 155.9L278.1 153.6" stroke-width="0.74" opacity="1.00"/><path d="M254 156Q250 158 250 160" stroke-width="0.80"/><circle cx="247.7" cy="162.0" r="1.1" stroke-width="0.64"/><circle cx="250.0" cy="162.0" r="1.1" stroke-width="0.64"/><circle cx="252.2" cy="162.0" r="1.1" stroke-width="0.64"/><circle cx="248.8" cy="164.2" r="1.1" stroke-width="0.64"/><circle cx="251.1" cy="164.2" r="1.1" stroke-width="0.64"/><path d="M256 156Q260 158 260 160" stroke-width="0.80"/><circle cx="257.8" cy="162.0" r="1.1" stroke-width="0.64"/><circle cx="260.0" cy="162.0" r="1.1" stroke-width="0.64"/><circle cx="262.3" cy="162.0" r="1.1" stroke-width="0.64"/><circle cx="258.9" cy="164.2" r="1.1" stroke-width="0.64"/><circle cx="261.2" cy="164.2" r="1.1" stroke-width="0.64"/></g><g opacity="0.65"><path d="M432 212 C431 179 430 169 429 146" stroke-width="1.92"/><path d="M429.7 203.8h3.9M429.4 195.5h3.8M429.1 187.2h3.6M428.8 179.0h3.5M428.5 170.8h3.3M428.2 162.5h3.2M427.8 154.2h3.1" stroke-width="0.64" opacity="0.65"/><path d="M429 146 Q417 140 403 149" stroke-width="1.44"/><path d="M424.5 144.2L427.1 140.9M424.5 144.2L425.1 148.3M422.2 143.7L424.8 139.6M422.2 143.7L423.5 148.4M419.8 143.4L422.2 138.7M419.8 143.4L421.8 148.2M417.5 143.4L419.3 138.5M417.5 143.4L420.0 148.0M415.2 143.6L416.4 138.8M415.2 143.6L418.0 147.8M412.8 144.1L413.5 139.6M412.8 144.1L415.8 147.6M410.4 144.9L410.6 141.0M410.4 144.9L413.3 147.7M408.1 145.9L407.9 142.7M408.1 145.9L410.5 148.0M405.7 147.2L405.4 144.8M405.7 147.2L407.6 148.6" stroke-width="0.82" opacity="1.00"/><path d="M429 146 Q419 132 409 131" stroke-width="1.44"/><path d="M425.3 141.4L429.3 140.1M425.3 141.4L423.6 145.3M423.5 139.4L428.0 137.7M423.5 139.4L421.8 144.0M421.6 137.7L426.4 135.5M421.6 137.7L420.1 142.6M419.8 136.1L424.4 133.6M419.8 136.1L418.6 141.2M418.0 134.8L422.2 132.1M418.0 134.8L417.2 139.7M416.1 133.7L419.7 130.9M416.1 133.7L415.8 138.2M414.3 132.7L417.2 130.0M414.3 132.7L414.4 136.7M412.4 132.0L414.6 129.6M412.4 132.0L412.9 135.2M410.6 131.6L412.0 129.6M410.6 131.6L411.2 133.9" stroke-width="0.82" opacity="1.00"/><path d="M429 146 Q426 129 422 117" stroke-width="1.44"/><path d="M427.8 140.1L431.9 141.0M427.8 140.1L424.4 142.6M427.2 137.3L432.0 138.3M427.2 137.3L423.3 140.3M426.5 134.6L431.7 135.5M426.5 134.6L422.4 137.8M425.9 131.9L431.1 132.8M425.9 131.9L421.8 135.2M425.2 129.3L430.2 130.1M425.2 129.3L421.3 132.5M424.5 126.8L429.1 127.5M424.5 126.8L421.0 129.7M423.8 124.3L427.8 124.9M423.8 124.3L420.8 126.9M423.1 122.0L426.3 122.4M423.1 122.0L420.7 124.1M422.4 119.7L424.8 119.9M422.4 119.7L420.6 121.3" stroke-width="0.82" opacity="1.00"/><path d="M429 146 Q433 129 438 117" stroke-width="1.44"/><path d="M430.5 140.1L433.8 142.8M430.5 140.1L426.4 140.8M431.3 137.3L435.0 140.4M431.3 137.3L426.5 138.0M432.1 134.6L436.0 137.9M432.1 134.6L426.9 135.3M432.9 131.9L436.8 135.3M432.9 131.9L427.7 132.6M433.7 129.3L437.4 132.6M433.7 129.3L428.7 129.9M434.5 126.8L437.8 129.9M434.5 126.8L429.9 127.3M435.3 124.3L438.2 127.0M435.3 124.3L431.3 124.7M436.1 122.0L438.4 124.2M436.1 122.0L432.9 122.2M436.9 119.7L438.6 121.4M436.9 119.7L434.5 119.9" stroke-width="0.82" opacity="1.00"/><path d="M429 146 Q440 133 451 131" stroke-width="1.44"/><path d="M433.0 141.5L434.5 145.5M433.0 141.5L429.1 140.0M435.0 139.6L436.5 144.3M435.0 139.6L430.6 137.6M437.0 137.9L438.3 142.9M437.0 137.9L432.4 135.5M439.0 136.3L440.0 141.5M439.0 136.3L434.5 133.7M441.0 135.0L441.6 140.0M441.0 135.0L436.9 132.1M443.1 133.9L443.2 138.4M443.1 133.9L439.5 131.0M445.1 132.9L444.9 136.9M445.1 132.9L442.2 130.2M447.1 132.2L446.7 135.4M447.1 132.2L444.9 129.8M449.1 131.6L448.6 134.0M449.1 131.6L447.7 129.7" stroke-width="0.82" opacity="1.00"/><path d="M429 146 Q442 140 457 150" stroke-width="1.44"/><path d="M433.9 144.5L432.9 148.6M433.9 144.5L431.4 141.0M436.3 144.1L434.8 148.7M436.3 144.1L433.9 139.8M438.8 143.9L436.7 148.7M438.8 143.9L436.7 139.2M441.3 144.0L438.7 148.6M441.3 144.0L439.7 139.0M443.8 144.4L440.9 148.5M443.8 144.4L442.7 139.5M446.4 144.9L443.4 148.4M446.4 144.9L445.7 140.4M448.9 145.8L446.1 148.5M448.9 145.8L448.7 141.8M451.4 146.8L449.0 148.9M451.4 146.8L451.5 143.6M454.0 148.1L452.1 149.5M454.0 148.1L454.2 145.8" stroke-width="0.82" opacity="1.00"/><path d="M428 148Q423 150 423 153" stroke-width="0.96"/><circle cx="421.0" cy="154.7" r="1.2" stroke-width="0.80"/><circle cx="423.5" cy="154.7" r="1.2" stroke-width="0.80"/><circle cx="426.0" cy="154.7" r="1.2" stroke-width="0.80"/><circle cx="422.2" cy="157.2" r="1.2" stroke-width="0.80"/><circle cx="424.7" cy="157.2" r="1.2" stroke-width="0.80"/><path d="M430 148Q435 150 435 153" stroke-width="0.96"/><circle cx="432.0" cy="154.7" r="1.2" stroke-width="0.80"/><circle cx="434.5" cy="154.7" r="1.2" stroke-width="0.80"/><circle cx="437.0" cy="154.7" r="1.2" stroke-width="0.80"/><circle cx="433.3" cy="157.2" r="1.2" stroke-width="0.80"/><circle cx="435.8" cy="157.2" r="1.2" stroke-width="0.80"/></g><g opacity="0.72"><path d="M538 214 C539 174 542 162 543 134" stroke-width="2.24"/><path d="M536.3 204.0h4.6M537.0 194.0h4.4M537.7 184.0h4.3M538.5 174.0h4.1M539.2 164.0h3.9M539.9 154.0h3.8M540.6 144.0h3.6" stroke-width="0.80" opacity="0.65"/><path d="M543 134 Q528 126 513 137" stroke-width="1.60"/><path d="M537.7 131.9L540.6 128.2M537.7 131.9L538.4 136.5M535.0 131.2L537.9 126.7M535.0 131.2L536.4 136.5M532.3 130.9L534.9 125.7M532.3 130.9L534.4 136.4M529.5 130.9L531.6 125.4M529.5 130.9L532.3 136.1M526.8 131.2L528.1 125.8M526.8 131.2L530.0 135.9M524.0 131.8L524.7 126.8M524.0 131.8L527.3 135.7M521.2 132.7L521.4 128.3M521.2 132.7L524.4 135.8M518.4 133.9L518.3 130.4M518.4 133.9L521.1 136.1M515.6 135.4L515.3 132.9M515.6 135.4L517.7 136.9" stroke-width="0.94" opacity="1.00"/><path d="M543 134 Q531 118 519 117" stroke-width="1.60"/><path d="M538.7 128.6L543.1 127.2M538.7 128.6L536.8 132.9M536.5 126.3L541.6 124.3M536.5 126.3L534.6 131.4M534.4 124.2L539.7 121.8M534.4 124.2L532.6 129.8M532.2 122.4L537.4 119.6M532.2 122.4L530.9 128.1M530.0 120.8L534.8 117.8M530.0 120.8L529.2 126.4M527.9 119.5L531.9 116.4M527.9 119.5L527.5 124.6M525.7 118.4L528.9 115.4M525.7 118.4L525.8 122.8M523.6 117.6L525.9 115.0M523.6 117.6L524.0 121.1M521.4 117.0L522.8 115.0M521.4 117.0L522.0 119.5" stroke-width="0.94" opacity="1.00"/><path d="M543 134 Q539 115 534 101" stroke-width="1.60"/><path d="M541.6 127.1L546.2 128.1M541.6 127.1L537.8 129.9M540.9 123.8L546.2 124.9M540.9 123.8L536.5 127.1M540.1 120.6L545.9 121.7M540.1 120.6L535.5 124.2M539.3 117.4L545.1 118.5M539.3 117.4L534.7 121.1M538.6 114.4L544.1 115.3M538.6 114.4L534.2 118.0M537.8 111.4L542.8 112.2M537.8 111.4L533.8 114.7M536.9 108.6L541.3 109.2M536.9 108.6L533.6 111.4M536.1 105.8L539.6 106.2M536.1 105.8L533.5 108.1M535.2 103.1L537.8 103.4M535.2 103.1L533.4 104.8" stroke-width="0.94" opacity="1.00"/><path d="M543 134 Q548 115 553 101" stroke-width="1.60"/><path d="M544.8 127.1L548.4 130.1M544.8 127.1L540.2 127.9M545.7 123.8L549.9 127.3M545.7 123.8L540.3 124.6M546.6 120.6L551.1 124.4M546.6 120.6L540.8 121.4M547.5 117.4L552.0 121.3M547.5 117.4L541.7 118.2M548.5 114.4L552.7 118.1M548.5 114.4L542.9 115.1M549.4 111.4L553.2 114.9M549.4 111.4L544.3 112.0M550.4 108.6L553.6 111.6M550.4 108.6L546.0 109.0M551.3 105.8L553.8 108.2M551.3 105.8L547.8 106.1M552.3 103.1L554.1 104.9M552.3 103.1L549.8 103.3" stroke-width="0.94" opacity="1.00"/><path d="M543 134 Q556 118 569 117" stroke-width="1.60"/><path d="M547.7 128.8L549.4 133.2M547.7 128.8L543.3 127.1M550.1 126.5L551.7 131.7M550.1 126.5L545.1 124.3M552.4 124.5L553.9 130.1M552.4 124.5L547.2 121.8M554.8 122.7L555.9 128.5M554.8 122.7L549.7 119.6M557.1 121.1L557.8 126.7M557.1 121.1L552.5 117.9M559.5 119.8L559.7 124.9M559.5 119.8L555.5 116.5M561.9 118.6L561.7 123.0M561.9 118.6L558.7 115.6M564.2 117.8L563.8 121.2M564.2 117.8L561.9 115.1M566.6 117.1L566.0 119.6M566.6 117.1L565.1 115.1" stroke-width="0.94" opacity="1.00"/><path d="M543 134 Q559 128 575 138" stroke-width="1.60"/><path d="M548.7 132.2L547.7 136.8M548.7 132.2L546.0 128.4M551.6 131.8L549.9 136.9M551.6 131.8L548.9 127.0M554.5 131.6L552.1 136.9M554.5 131.6L552.2 126.2M557.5 131.7L554.5 136.8M557.5 131.7L555.6 126.1M560.4 132.1L557.1 136.7M560.4 132.1L559.1 126.6M563.4 132.8L560.1 136.6M563.4 132.8L562.7 127.7M566.3 133.7L563.2 136.8M566.3 133.7L566.1 129.3M569.3 135.0L566.7 137.2M569.3 135.0L569.4 131.5M572.4 136.5L570.3 138.0M572.4 136.5L572.6 134.0" stroke-width="0.94" opacity="1.00"/><path d="M542 136Q537 139 537 142" stroke-width="1.12"/><circle cx="533.6" cy="144.3" r="1.4" stroke-width="0.96"/><circle cx="536.5" cy="144.3" r="1.4" stroke-width="0.96"/><circle cx="539.4" cy="144.3" r="1.4" stroke-width="0.96"/><circle cx="535.1" cy="147.2" r="1.4" stroke-width="0.96"/><circle cx="538.0" cy="147.2" r="1.4" stroke-width="0.96"/><path d="M544 136Q549 139 549 142" stroke-width="1.12"/><circle cx="546.6" cy="144.3" r="1.4" stroke-width="0.96"/><circle cx="549.5" cy="144.3" r="1.4" stroke-width="0.96"/><circle cx="552.4" cy="144.3" r="1.4" stroke-width="0.96"/><circle cx="548.0" cy="147.2" r="1.4" stroke-width="0.96"/><circle cx="550.9" cy="147.2" r="1.4" stroke-width="0.96"/></g><g opacity="1.0"><path d="M62 306 C60 231 55 208 52 156" stroke-width="3.36"/><path d="M57.1 287.2h7.3M56.0 268.5h7.0M54.9 249.8h6.8M53.7 231.0h6.5M52.6 212.2h6.2M51.5 193.5h6.0M50.4 174.8h5.7" stroke-width="1.28" opacity="0.65"/><path d="M52 156 Q29 144 4 161" stroke-width="2.56"/><path d="M43.5 152.6L47.6 147.5M43.5 152.6L44.6 159.1M39.2 151.6L43.4 145.1M39.2 151.6L41.3 159.1M34.9 151.1L38.6 143.6M34.9 151.1L38.0 158.9M30.5 151.1L33.5 143.1M30.5 151.1L34.5 158.6M26.2 151.6L28.1 143.7M26.2 151.6L30.7 158.2M21.8 152.5L22.8 145.4M21.8 152.5L26.4 158.0M17.3 154.0L17.6 147.9M17.3 154.0L21.7 158.2M12.9 155.9L12.7 151.2M12.9 155.9L16.5 158.8M8.4 158.3L8.0 155.2M8.4 158.3L10.9 160.1" stroke-width="1.52" opacity="1.00"/><path d="M52 156 Q33 130 14 128" stroke-width="2.56"/><path d="M45.1 147.4L51.4 145.4M45.1 147.4L42.5 153.4M41.7 143.7L49.0 140.9M41.7 143.7L38.9 151.0M38.2 140.4L45.9 137.0M38.2 140.4L35.8 148.5M34.8 137.5L42.3 133.5M34.8 137.5L32.9 145.8M31.4 135.0L38.1 130.7M31.4 135.0L30.1 143.0M27.9 132.9L33.6 128.5M27.9 132.9L27.4 140.1M24.5 131.2L28.9 127.1M24.5 131.2L24.6 137.3M21.0 129.9L24.1 126.4M21.0 129.9L21.6 134.5M17.6 129.0L19.4 126.4M17.6 129.0L18.3 132.0" stroke-width="1.52" opacity="1.00"/><path d="M52 156 Q46 125 38 103" stroke-width="2.56"/><path d="M49.8 145.0L56.2 146.4M49.8 145.0L44.5 148.9M48.6 139.8L56.2 141.3M48.6 139.8L42.4 144.5M47.4 134.6L55.7 136.2M47.4 134.6L40.7 139.8M46.2 129.6L54.5 131.1M46.2 129.6L39.5 134.9M44.9 124.8L52.9 126.1M44.9 124.8L38.7 129.9M43.6 120.1L50.8 121.1M43.6 120.1L38.1 124.7M42.3 115.5L48.3 116.3M42.3 115.5L37.7 119.5M41.0 111.1L45.6 111.7M41.0 111.1L37.5 114.2M39.6 106.8L42.7 107.1M39.6 106.8L37.3 108.9" stroke-width="1.52" opacity="1.00"/><path d="M52 156 Q60 125 68 103" stroke-width="2.56"/><path d="M54.8 145.0L59.9 149.2M54.8 145.0L48.4 146.1M56.3 139.8L62.3 144.7M56.3 139.8L48.6 140.9M57.7 134.6L64.1 140.1M57.7 134.6L49.4 135.8M59.2 129.6L65.6 135.2M59.2 129.6L50.8 130.7M60.7 124.8L66.7 130.1M60.7 124.8L52.7 125.7M62.2 120.1L67.5 124.9M62.2 120.1L55.0 120.8M63.7 115.5L68.1 119.7M63.7 115.5L57.7 116.1M65.2 111.1L68.6 114.3M65.2 111.1L60.6 111.5M66.8 106.8L69.0 109.0M66.8 106.8L63.7 107.0" stroke-width="1.52" opacity="1.00"/><path d="M52 156 Q73 131 93 128" stroke-width="2.56"/><path d="M59.5 147.7L61.8 153.8M59.5 147.7L53.4 145.3M63.3 144.1L65.6 151.5M63.3 144.1L56.1 140.9M67.0 140.8L69.1 149.0M67.0 140.8L59.5 137.0M70.8 137.9L72.3 146.3M70.8 137.9L63.5 133.6M74.5 135.4L75.5 143.4M74.5 135.4L67.9 130.9M78.3 133.3L78.6 140.5M78.3 133.3L72.7 128.8M82.0 131.6L81.8 137.6M82.0 131.6L77.6 127.4M85.8 130.2L85.2 134.8M85.8 130.2L82.7 126.6M89.5 129.1L88.8 132.2M89.5 129.1L87.7 126.6" stroke-width="1.52" opacity="1.00"/><path d="M52 156 Q77 146 104 163" stroke-width="2.56"/><path d="M61.1 153.2L59.6 159.5M61.1 153.2L57.3 147.8M65.7 152.4L63.2 159.8M65.7 152.4L61.9 145.6M70.4 152.1L66.9 159.8M70.4 152.1L66.9 144.5M75.0 152.3L70.8 159.6M75.0 152.3L72.3 144.3M79.7 152.9L75.1 159.5M79.7 152.9L77.9 145.1M84.4 154.0L79.7 159.5M84.4 154.0L83.4 146.9M89.2 155.5L84.9 159.8M89.2 155.5L88.9 149.5M94.0 157.5L90.4 160.6M94.0 157.5L94.1 152.9M98.8 160.0L96.2 161.8M98.8 160.0L99.1 156.9" stroke-width="1.52" opacity="1.00"/><path d="M50 159Q42 164 42 169" stroke-width="1.76"/><circle cx="37.0" cy="172.3" r="2.2" stroke-width="1.44"/><circle cx="41.7" cy="172.3" r="2.2" stroke-width="1.44"/><circle cx="46.3" cy="172.3" r="2.2" stroke-width="1.44"/><circle cx="39.4" cy="177.0" r="2.2" stroke-width="1.44"/><circle cx="44.0" cy="177.0" r="2.2" stroke-width="1.44"/><path d="M54 159Q62 164 62 169" stroke-width="1.76"/><circle cx="57.7" cy="172.3" r="2.2" stroke-width="1.44"/><circle cx="62.3" cy="172.3" r="2.2" stroke-width="1.44"/><circle cx="67.0" cy="172.3" r="2.2" stroke-width="1.44"/><circle cx="60.0" cy="177.0" r="2.2" stroke-width="1.44"/><circle cx="64.6" cy="177.0" r="2.2" stroke-width="1.44"/></g><g opacity="1.0"><path d="M600 296 C602 223 607 201 610 150" stroke-width="3.52"/><path d="M597.5 277.8h7.5M598.9 259.5h7.2M600.3 241.2h6.9M601.7 223.0h6.7M603.1 204.8h6.4M604.4 186.5h6.1M605.8 168.2h5.8" stroke-width="1.28" opacity="0.65"/><path d="M610 150 Q586 138 561 155" stroke-width="2.72"/><path d="M601.3 146.5L605.5 141.3M601.3 146.5L602.4 153.1M596.9 145.5L601.2 138.8M596.9 145.5L599.0 153.2M592.5 145.0L596.3 137.3M592.5 145.0L595.7 152.9M588.0 145.0L591.0 136.9M588.0 145.0L592.1 152.6M583.6 145.5L585.5 137.5M583.6 145.5L588.2 152.2M579.0 146.4L580.1 139.2M579.0 146.4L583.8 152.0M574.5 147.9L574.8 141.7M574.5 147.9L578.9 152.2M569.9 149.9L569.7 145.1M569.9 149.9L573.6 152.9M565.3 152.3L565.0 149.2M565.3 152.3L568.0 154.1" stroke-width="1.55" opacity="1.00"/><path d="M610 150 Q591 124 571 122" stroke-width="2.72"/><path d="M603.0 141.2L609.3 139.2M603.0 141.2L600.3 147.3M599.4 137.4L606.9 134.6M599.4 137.4L596.6 144.9M595.9 134.1L603.7 130.5M595.9 134.1L593.4 142.2M592.4 131.1L600.0 127.0M592.4 131.1L590.4 139.5M588.9 128.5L595.8 124.1M588.9 128.5L587.6 136.6M585.4 126.4L591.2 121.9M585.4 126.4L584.9 133.7M581.8 124.6L586.4 120.4M581.8 124.6L582.0 130.8M578.3 123.3L581.4 119.7M578.3 123.3L578.9 128.0M574.8 122.4L576.6 119.8M574.8 122.4L575.5 125.4" stroke-width="1.55" opacity="1.00"/><path d="M610 150 Q604 118 596 95" stroke-width="2.72"/><path d="M607.7 138.8L614.2 140.2M607.7 138.8L602.3 142.7M606.5 133.4L614.3 134.9M606.5 133.4L600.2 138.2M605.3 128.1L613.7 129.7M605.3 128.1L598.5 133.4M604.0 123.0L612.5 124.5M604.0 123.0L597.3 128.4M602.8 118.1L610.9 119.4M602.8 118.1L596.4 123.2M601.4 113.2L608.7 114.3M601.4 113.2L595.8 118.0M600.1 108.6L606.2 109.4M600.1 108.6L595.4 112.6M598.7 104.1L603.5 104.6M598.7 104.1L595.2 107.2M597.3 99.7L600.5 100.0M597.3 99.7L595.0 101.8" stroke-width="1.55" opacity="1.00"/><path d="M610 150 Q618 118 627 95" stroke-width="2.72"/><path d="M612.9 138.8L618.1 143.0M612.9 138.8L606.3 139.8M614.4 133.4L620.5 138.5M614.4 133.4L606.5 134.6M615.9 128.1L622.4 133.7M615.9 128.1L607.4 129.3M617.4 123.0L623.9 128.7M617.4 123.0L608.8 124.1M618.9 118.1L625.0 123.5M618.9 118.1L610.7 119.0M620.4 113.2L625.9 118.2M620.4 113.2L613.1 114.0M622.0 108.6L626.5 112.8M622.0 108.6L615.8 109.2M623.5 104.1L627.0 107.3M623.5 104.1L618.8 104.4M625.1 99.7L627.4 101.9M625.1 99.7L622.0 99.9" stroke-width="1.55" opacity="1.00"/><path d="M610 150 Q631 124 652 122" stroke-width="2.72"/><path d="M617.7 141.5L620.0 147.7M617.7 141.5L611.4 139.1M621.5 137.8L623.9 145.3M621.5 137.8L614.3 134.6M625.4 134.5L627.5 142.8M625.4 134.5L617.7 130.6M629.2 131.5L630.8 140.0M629.2 131.5L621.8 127.1M633.0 129.0L634.0 137.1M633.0 129.0L626.3 124.3M636.9 126.8L637.2 134.1M636.9 126.8L631.2 122.1M640.7 125.0L640.5 131.1M640.7 125.0L636.3 120.7M644.6 123.6L644.0 128.3M644.6 123.6L641.4 120.0M648.4 122.5L647.7 125.6M648.4 122.5L646.5 119.9" stroke-width="1.55" opacity="1.00"/><path d="M610 150 Q636 139 663 157" stroke-width="2.72"/><path d="M619.3 147.1L617.8 153.6M619.3 147.1L615.5 141.6M624.1 146.3L621.5 153.8M624.1 146.3L620.1 139.4M628.8 146.0L625.2 153.8M628.8 146.0L625.3 138.2M633.6 146.2L629.2 153.7M633.6 146.2L630.8 138.0M638.4 146.9L633.6 153.6M638.4 146.9L636.5 138.9M643.2 148.0L638.4 153.6M643.2 148.0L642.2 140.7M648.1 149.5L643.7 153.9M648.1 149.5L647.7 143.4M652.9 151.6L649.3 154.6M652.9 151.6L653.0 146.8M657.9 154.1L655.3 155.9M657.9 154.1L658.2 150.9" stroke-width="1.55" opacity="1.00"/><path d="M608 154Q599 158 599 163" stroke-width="1.76"/><circle cx="594.7" cy="166.7" r="2.3" stroke-width="1.44"/><circle cx="599.4" cy="166.7" r="2.3" stroke-width="1.44"/><circle cx="604.2" cy="166.7" r="2.3" stroke-width="1.44"/><circle cx="597.1" cy="171.5" r="2.3" stroke-width="1.44"/><circle cx="601.8" cy="171.5" r="2.3" stroke-width="1.44"/><path d="M612 154Q621 158 621 163" stroke-width="1.76"/><circle cx="615.8" cy="166.7" r="2.3" stroke-width="1.44"/><circle cx="620.6" cy="166.7" r="2.3" stroke-width="1.44"/><circle cx="625.3" cy="166.7" r="2.3" stroke-width="1.44"/><circle cx="618.2" cy="171.5" r="2.3" stroke-width="1.44"/><circle cx="622.9" cy="171.5" r="2.3" stroke-width="1.44"/></g><g opacity="1.00"><path d="M470 288 C468 224 466 205 464 160" stroke-width="2.88"/><path d="M466.2 272.0h6.1M465.6 256.0h5.9M464.9 240.0h5.7M464.3 224.0h5.4M463.6 208.0h5.2M463.0 192.0h5.0M462.4 176.0h4.8" stroke-width="1.12" opacity="0.65"/><path d="M464 160 Q445 150 424 164" stroke-width="2.24"/><path d="M456.9 157.1L460.5 152.7M456.9 157.1L457.8 162.8M453.3 156.3L457.0 150.6M453.3 156.3L455.1 162.8M449.7 155.9L452.9 149.4M449.7 155.9L452.4 162.7M446.0 155.9L448.6 149.0M446.0 155.9L449.5 162.4M442.4 156.3L444.1 149.5M442.4 156.3L446.3 162.1M438.7 157.1L439.6 150.8M438.7 157.1L442.7 161.9M435.0 158.3L435.2 153.0M435.0 158.3L438.8 162.0M431.2 159.9L431.1 155.7M431.2 159.9L434.4 162.5M427.5 161.9L427.1 159.1M427.5 161.9L429.8 163.5" stroke-width="1.26" opacity="1.00"/><path d="M464 160 Q448 138 432 137" stroke-width="2.24"/><path d="M458.2 152.8L463.7 151.1M458.2 152.8L455.9 158.1M455.4 149.7L461.7 147.3M455.4 149.7L453.0 156.1M452.5 147.0L459.1 143.9M452.5 147.0L450.3 153.9M449.6 144.5L456.1 141.0M449.6 144.5L447.9 151.7M446.7 142.4L452.6 138.7M446.7 142.4L445.6 149.3M443.8 140.7L448.8 136.8M443.8 140.7L443.4 147.0M441.0 139.2L444.9 135.6M441.0 139.2L441.1 144.6M438.1 138.2L440.8 135.0M438.1 138.2L438.6 142.3M435.2 137.4L436.8 135.0M435.2 137.4L435.9 140.2" stroke-width="1.26" opacity="1.00"/><path d="M464 160 Q459 134 452 115" stroke-width="2.24"/><path d="M462.1 150.8L467.7 152.0M462.1 150.8L457.5 154.2M461.1 146.4L467.8 147.7M461.1 146.4L455.7 150.5M460.1 142.1L467.3 143.5M460.1 142.1L454.4 146.6M459.1 137.9L466.4 139.2M459.1 137.9L453.4 142.5M458.1 133.9L465.0 135.0M458.1 133.9L452.7 138.3M457.0 129.9L463.2 130.9M457.0 129.9L452.2 134.0M455.9 126.1L461.2 126.8M455.9 126.1L451.9 129.6M454.8 122.4L458.9 122.9M454.8 122.4L451.7 125.2M453.6 118.8L456.5 119.1M453.6 118.8L451.5 120.8" stroke-width="1.26" opacity="1.00"/><path d="M464 160 Q470 134 478 115" stroke-width="2.24"/><path d="M466.4 150.8L470.8 154.5M466.4 150.8L460.7 151.7M467.6 146.4L472.8 150.7M467.6 146.4L460.9 147.4M468.8 142.1L474.4 146.8M468.8 142.1L461.6 143.1M470.0 137.9L475.6 142.8M470.0 137.9L462.8 138.9M471.3 133.9L476.5 138.5M471.3 133.9L464.3 134.7M472.5 129.9L477.2 134.2M472.5 129.9L466.3 130.6M473.8 126.1L477.7 129.7M473.8 126.1L468.5 126.6M475.1 122.4L478.1 125.3M475.1 122.4L470.9 122.7M476.4 118.8L478.4 120.8M476.4 118.8L473.5 119.0" stroke-width="1.26" opacity="1.00"/><path d="M464 160 Q481 139 499 137" stroke-width="2.24"/><path d="M470.3 153.0L472.3 158.4M470.3 153.0L464.9 151.0M473.4 150.0L475.5 156.5M473.4 150.0L467.2 147.3M476.6 147.3L478.4 154.4M476.6 147.3L470.1 144.0M479.7 144.9L481.1 152.1M479.7 144.9L473.4 141.1M482.9 142.8L483.7 149.7M482.9 142.8L477.1 138.8M486.0 141.0L486.3 147.3M486.0 141.0L481.1 137.0M489.1 139.5L488.9 144.9M489.1 139.5L485.3 135.8M492.3 138.4L491.8 142.5M492.3 138.4L489.5 135.2M495.4 137.5L494.8 140.3M495.4 137.5L493.7 135.2" stroke-width="1.26" opacity="1.00"/><path d="M464 160 Q485 151 507 166" stroke-width="2.24"/><path d="M471.6 157.6L470.3 163.2M471.6 157.6L468.3 152.9M475.5 157.0L473.3 163.4M475.5 157.0L472.1 151.1M479.4 156.8L476.4 163.4M479.4 156.8L476.4 150.1M483.3 156.9L479.6 163.3M483.3 156.9L481.0 149.9M487.2 157.4L483.2 163.1M487.2 157.4L485.6 150.6M491.2 158.3L487.1 163.1M491.2 158.3L490.3 152.1M495.1 159.6L491.3 163.4M495.1 159.6L494.8 154.3M499.1 161.3L496.0 164.0M499.1 161.3L499.2 157.1M503.2 163.3L500.8 165.0M503.2 163.3L503.4 160.5" stroke-width="1.26" opacity="1.00"/><path d="M463 163Q455 166 455 171" stroke-width="1.44"/><circle cx="451.5" cy="173.7" r="1.9" stroke-width="1.28"/><circle cx="455.4" cy="173.7" r="1.9" stroke-width="1.28"/><circle cx="459.2" cy="173.7" r="1.9" stroke-width="1.28"/><circle cx="453.4" cy="177.6" r="1.9" stroke-width="1.28"/><circle cx="457.3" cy="177.6" r="1.9" stroke-width="1.28"/><path d="M465 163Q473 166 473 171" stroke-width="1.44"/><circle cx="468.8" cy="173.7" r="1.9" stroke-width="1.28"/><circle cx="472.6" cy="173.7" r="1.9" stroke-width="1.28"/><circle cx="476.5" cy="173.7" r="1.9" stroke-width="1.28"/><circle cx="470.7" cy="177.6" r="1.9" stroke-width="1.28"/><circle cx="474.6" cy="177.6" r="1.9" stroke-width="1.28"/></g><g opacity="1.0"><path d="M120 388 C122 269 126 233 129 150" stroke-width="5.44"/><path d="M115.4 358.2h11.5M116.7 328.5h11.0M118.1 298.8h10.6M119.4 269.0h10.2M120.7 239.2h9.8M122.1 209.5h9.4M123.4 179.8h9.0" stroke-width="2.08" opacity="0.65"/><path d="M129 150 Q93 131 53 158" stroke-width="4.16"/><path d="M115.7 144.6L121.6 137.3M115.7 144.6L117.2 153.9M108.9 143.1L115.1 133.6M108.9 143.1L112.0 154.0M102.1 142.3L107.6 131.3M102.1 142.3L106.7 153.8M95.3 142.3L99.6 130.6M95.3 142.3L101.2 153.3M88.4 143.0L91.3 131.6M88.4 143.0L95.1 152.8M81.5 144.5L83.0 134.2M81.5 144.5L88.3 152.5M74.6 146.8L75.0 138.1M74.6 146.8L80.7 152.8M67.5 149.8L67.3 143.3M67.5 149.8L72.5 153.9M60.5 153.6L60.0 149.6M60.5 153.6L63.8 155.9" stroke-width="2.38" opacity="1.00"/><path d="M129 150 Q99 110 70 107" stroke-width="4.16"/><path d="M118.2 136.5L127.2 133.7M118.2 136.5L114.4 145.1M112.8 130.7L123.4 126.7M112.8 130.7L108.8 141.3M107.4 125.5L118.6 120.5M107.4 125.5L103.8 137.3M102.0 121.0L112.9 115.1M102.0 121.0L99.2 133.1M96.6 117.1L106.5 110.7M96.6 117.1L94.8 128.7M91.2 113.8L99.5 107.4M91.2 113.8L90.5 124.2M85.8 111.1L92.1 105.2M85.8 111.1L86.0 119.7M80.4 109.0L84.6 104.2M80.4 109.0L81.2 115.4M75.0 107.6L77.3 104.3M75.0 107.6L76.0 111.5" stroke-width="2.38" opacity="1.00"/><path d="M129 150 Q120 101 107 66" stroke-width="4.16"/><path d="M125.5 132.8L134.7 134.7M125.5 132.8L117.9 138.4M123.6 124.5L134.8 126.7M123.6 124.5L114.6 131.3M121.8 116.4L133.9 118.7M121.8 116.4L112.0 124.0M119.9 108.6L132.1 110.8M119.9 108.6L110.1 116.3M117.9 101.0L129.5 102.9M117.9 101.0L108.8 108.4M115.9 93.6L126.2 95.2M115.9 93.6L107.9 100.3M113.8 86.4L122.4 87.6M113.8 86.4L107.3 92.1M111.7 79.5L118.1 80.3M111.7 79.5L106.9 83.8M109.6 72.8L113.6 73.2M109.6 72.8L106.6 75.5" stroke-width="2.38" opacity="1.00"/><path d="M129 150 Q141 101 155 66" stroke-width="4.16"/><path d="M133.5 132.8L140.7 138.7M133.5 132.8L124.2 134.3M135.7 124.5L144.4 131.8M135.7 124.5L124.5 126.2M138.0 116.4L147.4 124.4M138.0 116.4L125.8 118.2M140.3 108.6L149.7 116.8M140.3 108.6L128.0 110.2M142.7 101.0L151.4 108.8M142.7 101.0L131.0 102.4M145.0 93.6L152.7 100.7M145.0 93.6L134.6 94.7M147.4 86.4L153.7 92.4M147.4 86.4L138.8 87.3M149.8 79.5L154.4 84.0M149.8 79.5L143.4 80.0M152.2 72.8L155.1 75.6M152.2 72.8L148.2 73.1" stroke-width="2.38" opacity="1.00"/><path d="M129 150 Q161 111 194 107" stroke-width="4.16"/><path d="M140.8 136.9L144.1 145.7M140.8 136.9L132.0 133.6M146.7 131.3L150.1 142.1M146.7 131.3L136.3 126.7M152.6 126.2L155.6 138.1M152.6 126.2L141.6 120.5M158.5 121.7L160.8 133.9M158.5 121.7L147.8 115.3M164.3 117.7L165.7 129.4M164.3 117.7L154.7 111.0M170.2 114.4L170.7 124.8M170.2 114.4L162.1 107.8M176.1 111.6L175.8 120.3M176.1 111.6L169.9 105.6M182.0 109.4L181.2 115.8M182.0 109.4L177.8 104.6M187.9 107.8L187.0 111.8M187.9 107.8L185.5 104.6" stroke-width="2.38" opacity="1.00"/><path d="M129 150 Q168 134 210 161" stroke-width="4.16"/><path d="M143.3 145.5L141.2 154.7M143.3 145.5L137.9 137.8M150.6 144.4L146.9 155.1M150.6 144.4L144.9 134.5M157.8 143.9L152.7 155.2M157.8 143.9L152.8 132.7M165.1 144.2L158.9 155.0M165.1 144.2L161.2 132.4M172.5 145.2L165.7 154.8M172.5 145.2L169.8 133.7M179.9 146.9L173.1 154.8M179.9 146.9L178.5 136.5M187.4 149.3L181.2 155.4M187.4 149.3L186.9 140.7M194.9 152.4L189.9 156.6M194.9 152.4L195.0 146.0M202.4 156.2L199.1 158.6M202.4 156.2L202.8 152.2" stroke-width="2.38" opacity="1.00"/><path d="M126 155Q113 162 113 170" stroke-width="2.88"/><circle cx="105.5" cy="175.7" r="3.5" stroke-width="2.24"/><circle cx="112.8" cy="175.7" r="3.5" stroke-width="2.24"/><circle cx="120.1" cy="175.7" r="3.5" stroke-width="2.24"/><circle cx="109.2" cy="182.9" r="3.5" stroke-width="2.24"/><circle cx="116.4" cy="182.9" r="3.5" stroke-width="2.24"/><path d="M132 155Q145 162 145 170" stroke-width="2.88"/><circle cx="137.9" cy="175.7" r="3.5" stroke-width="2.24"/><circle cx="145.2" cy="175.7" r="3.5" stroke-width="2.24"/><circle cx="152.5" cy="175.7" r="3.5" stroke-width="2.24"/><circle cx="141.6" cy="182.9" r="3.5" stroke-width="2.24"/><circle cx="148.8" cy="182.9" r="3.5" stroke-width="2.24"/></g><circle cx="138" cy="216" r="6.8" stroke-width="3.52"/><path d="M138 223q2 10 1 19" stroke-width="4.16"/><path d="M139 227q-10 -6 -12 -15" stroke-width="3.52"/><path d="M139 231q-11 -1 -14 -8" stroke-width="3.52"/><path d="M139 241q-10 4 -14 10" stroke-width="4.00"/><path d="M139 241q-5 9 -11 14" stroke-width="4.00"/><path d="M120 252q14 7 24 -1" stroke-width="2.40" opacity="1.00"/><path d="M292 344q40 26 96 0-16 23-48 23t-48-23z" stroke-width="3.52"/><circle cx="344" cy="316" r="6.2" stroke-width="3.36"/><path d="M344 322v16" stroke-width="4.00"/><path d="M334 332L356 325" stroke-width="3.36"/><path d="M358 320L348 347" stroke-width="3.52"/><path d="M346 344q5 5 4 11q-6 -1 -9 -8z" stroke-width="2.88"/><path d="M299 340q9 15 18 0z" stroke-width="2.56"/><circle cx="304" cy="337" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="308" cy="335" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="312" cy="337" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="307" cy="340" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="311" cy="340" r="2.1" stroke-width="1.68" opacity="1.00"/><path d="M317 340q9 15 18 0z" stroke-width="2.56"/><circle cx="322" cy="337" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="326" cy="335" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="330" cy="337" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="325" cy="340" r="2.1" stroke-width="1.68" opacity="1.00"/><circle cx="329" cy="340" r="2.1" stroke-width="1.68" opacity="1.00"/><path d="M-26 406 Q56 362 132 382" stroke-width="3.36"/><path d="M-0.9 394.0L-1.2 402.2M-0.9 394.0L-6.9 388.3M11.5 389.1L10.7 399.2M11.5 389.1L4.5 381.8M23.9 385.0L22.3 396.2M23.9 385.0L16.5 376.4M36.2 381.6L33.9 393.3M36.2 381.6L29.0 372.2M48.4 379.0L45.4 390.5M48.4 379.0L41.8 369.2M60.6 377.2L57.1 388.0M60.6 377.2L54.8 367.4M72.7 376.1L68.8 385.7M72.7 376.1L68.0 366.8M84.7 375.8L80.8 383.9M84.7 375.8L81.1 367.5M96.6 376.2L93.1 382.6M96.6 376.2L94.1 369.2M108.5 377.4L105.5 382.0M108.5 377.4L107.0 372.1M120.3 379.3L118.2 382.2M120.3 379.3L119.5 375.8" stroke-width="2.00" opacity="1.00"/><path d="M686 412 Q600 364 524 386" stroke-width="3.36"/><path d="M659.8 398.9L665.9 393.3M659.8 398.9L659.9 407.2M646.8 393.6L653.9 386.3M646.8 393.6L647.5 403.7M634.0 389.1L641.5 380.6M634.0 389.1L635.4 400.3M621.3 385.4L628.6 376.1M621.3 385.4L623.5 397.1M608.7 382.6L615.5 372.8M608.7 382.6L611.6 394.1M596.3 380.6L602.1 370.9M596.3 380.6L599.7 391.4M583.9 379.4L588.6 370.2M583.9 379.4L587.7 389.1M571.7 379.1L575.3 370.8M571.7 379.1L575.6 387.2M559.6 379.6L562.0 372.6M559.6 379.6L563.2 386.0M547.6 380.9L549.1 375.6M547.6 380.9L550.7 385.5M535.8 383.0L536.4 379.5M535.8 383.0L537.9 385.9" stroke-width="2.00" opacity="1.00"/></svg></div>
+      <div class="extext">
+        <h2 data-i18n-html="acaiTitle">So what <em>is</em> açaí, really?</h2>
+        <p data-i18n-html="acaiP1"><b>It starts 4,000 miles from here.</b> Deep in the Amazon, açaí grows in heavy purple clusters at the very top of slender palms — and it's still picked the old way, barefoot, one climb at a time.</p>
+        <p data-i18n-html="acaiP2">Brazilians blend it thick and frozen. We pile it high with fruit and granola, and eat it with a spoon. It tastes like blackberry crossed with dark chocolate — earthy, ice-cold, a little wild.</p>
+        <p data-i18n-html="acaiP3"><b>Back home, it's an everyday thing.</b> Some people have it before a long day, some after a workout, most just because it's good — loaded with antioxidants and healthy fats. And honestly? It just tastes incredible.</p>
+        <div class="chips" id="benefits"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STORY ═══ -->
+<section class="tint">
+  <div class="wrap">
+    <div class="story">
+      <h2 data-i18n="storyTitle">Our story</h2>
+      <p class="quote" data-i18n="storyQuote">“We started Açaí Brasil SJ in April 2024, after eight years living in the United States. We wanted to bring something that's hugely popular back home in our culture — something healthy and tasty at the same time.”</p>
+      <p class="who" data-i18n="storyWho">— The family behind Açaí Brasil SJ</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section>
+  <div class="wrap">
+    <h2 class="center" data-i18n="galleryTitle">The real thing</h2>
+    <div class="gallery">
+      <img src="img/01.jpg" alt="Açaí bowl with strawberries, blueberries and granola" loading="lazy">
+      <img src="img/02.jpg" alt="Creamy açaí bowl topped with fresh fruit" loading="lazy">
+      <img src="img/03.jpg" alt="The Açaí Brasil SJ truck" loading="lazy">
+      <img src="img/04.jpg" alt="Açaí bowl held up with fresh bananas behind" loading="lazy">
+      <img src="img/05.jpg" alt="The Açaí Brasil SJ stall at a farmers market" loading="lazy">
+      <img src="img/06.jpg" alt="Açaí bowl in front of the Açaí Brasil SJ sign" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CATERING ═══ -->
+<section id="catering">
+  <div class="wrap">
+    <div class="catering">
+      <h2 class="center" data-i18n="cateringTitle">Bring us to your event</h2>
+      <p class="center" style="max-width:540px;margin:0 auto 22px" data-i18n="cateringLede">Birthdays, weddings, school events, corporate lunches. Tell us the date and roughly how many people, and we'll come back to you with a price.</p>
+      <!-- Formspree, free plan, 50 submissions/month. Account is Gayithri's; the RECIPIENT should
+           be the client's business email. Changing the recipient does not change this endpoint.
+           See section 5A of the handoff doc. -->
+      <form action="https://formspree.io/f/mwlewwvp" method="POST">
+        <div><label for="cname" data-i18n="fName">Your name</label>
+             <input id="cname" name="name" required autocomplete="name"></div>
+        <div><label for="cphone" data-i18n="fPhone">Phone or WhatsApp</label>
+             <input id="cphone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div><label for="cemail" data-i18n="fEmail">Email</label>
+             <input id="cemail" name="email" type="email" autocomplete="email"></div>
+        <div><label for="cdate" data-i18n="fDate">Event date</label>
+             <input id="cdate" name="event_date" type="date" required></div>
+        <div><label for="cguests" data-i18n="fGuests">Roughly how many people?</label>
+             <input id="cguests" name="guests" type="number" min="1" inputmode="numeric" required></div>
+        <div><label for="cmsg" data-i18n="fMsg">Anything else we should know?</label>
+             <textarea id="cmsg" name="message"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="company">Company</label>
+             <input id="company" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-gold btn-block" type="submit" style="margin:4px auto 0" data-i18n="fSend">Send inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="fl" src="img/logo-white.png" alt="Açaí Brasil SJ">
+    <p data-i18n="footerLede">Brazilian açaí, made fresh in San Jose.</p>
+    <div class="social">
+      <a href="https://www.instagram.com/acaibrasilsj/" rel="noopener">Instagram</a>
+      <a href="#catering" data-i18n="footerCatering">Catering</a>
+      <a href="#menu" data-i18n="footerMenu">Menu</a>
+      <button type="button" id="phoneBtn" data-i18n="footerContact">Contact us</button>
+    </div>
+    <p class="fine">© <span id="yr"></span> Açaí Brasil SJ · San Jose, California</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Açaí Brasil SJ",
+"description":"Family owned Brazilian açaí bowls, served from a trailer and market stall across San Jose and the South Bay.",
+"servesCuisine":["Brazilian","Açaí"],"url":"https://acaibrasilsj.com/",
+"image":"https://acaibrasilsj.com/img/og-cover.jpg","logo":"https://acaibrasilsj.com/img/logo-purple.png",
+"priceRange":"$12-$15","telephone":"+1-908-251-0750","sameAs":["https://www.instagram.com/acaibrasilsj/"],
+"foundingDate":"2024-04",
+"areaServed":[{"@type":"City","name":"San Jose"},{"@type":"City","name":"Sunnyvale"},
+{"@type":"City","name":"Palo Alto"},{"@type":"City","name":"Santa Clara"}],
+"address":{"@type":"PostalAddress","addressLocality":"San Jose","addressRegion":"CA","addressCountry":"US"}}
+</script>
+
+<script>
+/* ╔══════════════════════════════════════════════════════════╗
+   ║  CONFIG — the only block you normally need to touch.      ║
+   ╚══════════════════════════════════════════════════════════╝ */
+const CONFIG = {
+  /* Published CSV of the "Form Responses 1" sheet of "Acai Brasil SJ - Daily location (Responses)".
+     Publish path: File > Share > Publish to web > that sheet > Comma-separated values (.csv).
+     The gid must match that sheet, and the sheet's own timezone must stay Pacific. Verified
+     18 Aug 2026: returns 200 with an Access-Control-Allow-Origin header permitting an unrelated
+     origin, so the site can read it from any domain. Empty string = weekly default only. */
+  sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YE4zL69B5SwqYtsnh0SAyzbX0K4Sy_QAYKZKJPDFO9kumcSOY4SWexHbVPNI8ed4s8ifTkoicDVK/pub?gid=376275318&single=true&output=csv",
+  phone: "(908) 251-0750",         // public number shown in the footer
+  timezone: "America/Los_Angeles",
+  fetchTimeoutMs: 4000
+};
+
+/* Market names must match the Google Form dropdown EXACTLY.
+   Directions are a Maps search query — no API key, no geocoding. */
+const SPOTS = {
+  "California Ave Farmers Market":     { area:"California Avenue, Palo Alto",
+                                         q:"California Avenue Farmers Market, Palo Alto, CA" },
+  "Japantown Farmers Market":          { area:"357 E Taylor St · Gordon Biersch lot, San Jose",
+                                         q:"357 E Taylor St, San Jose, CA" },
+  "Santa Clara Valley Medical Center": { area:"751 S Bascom Ave, San Jose",
+                                         q:"751 S Bascom Ave, San Jose, CA" },
+  "Los Altos Farmers Market":          { area:"State Street, Downtown Los Altos",
+                                         q:"State St, Los Altos, CA" },
+  "Willow Glen Farmers Market":        { area:"1425 Lincoln Ave · Willow Glen Elementary, San Jose",
+                                         q:"1425 Lincoln Ave, San Jose, CA" },
+  "Sunnyvale Farmers Market":          { area:"Murphy & Washington Avenues, Sunnyvale",
+                                         q:"Murphy Ave & Washington Ave, Sunnyvale, CA" }
+};
+Object.keys(SPOTS).forEach(k => SPOTS[k].maps =
+  "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(SPOTS[k].q || k + ", CA"));
+
+/* Layer A — the recurring week. 0 = Sunday. Closed Mon + Tue.
+   season:[first,last] as month numbers, 1 = January, inclusive. No season key = all year. */
+const WEEK = [
+  { dow:0, stops:[ {spot:"California Ave Farmers Market",     hours:"9:00am – 1:00pm"},
+                   {spot:"Japantown Farmers Market",          hours:"8:00am – 12:00pm", season:[5,10]} ] },
+  { dow:1, stops:[] },
+  { dow:2, stops:[] },
+  { dow:3, stops:[ {spot:"Santa Clara Valley Medical Center", hours:"9:00am – 1:00pm"} ] },
+  { dow:4, stops:[ {spot:"Los Altos Farmers Market",          hours:"4:00pm – 8:00pm", season:[5,10]} ] },
+  { dow:5, stops:[ {spot:"Santa Clara Valley Medical Center", hours:"9:00am – 2:00pm"} ] },
+  { dow:6, stops:[ {spot:"Willow Glen Farmers Market",        hours:"9:00am – 1:00pm"},
+                   {spot:"Sunnyvale Farmers Market",          hours:"9:00am – 1:00pm"} ] }
+];
+
+const INCLUDED = {
+  en:["Banana","Strawberry","Blueberry","Gluten-free & nut-free granola","Honey"],
+  es:["Plátano","Fresa","Arándano","Granola sin gluten y sin nueces","Miel"]
+};
+const BENEFITS = {
+  en:["Rich in antioxidants","Natural energy","Plant-based fats","Fibre for digestion"],
+  es:["Rico en antioxidantes","Energía natural","Grasas vegetales","Fibra para la digestión"]
+};
+const ADDONS = [
+  { en:"Extra granola", es:"Granola extra",       p:"$1" },
+  { en:"Whey protein",  es:"Proteína de suero",   p:"$2" },
+  { en:"Peanut butter (contains peanuts)", es:"Mantequilla de maní (contiene maní)", p:"$1" }
+];
+
+const T = {
+ en:{
+  family:"Family owned & operated local business",
+  heroTitle:"Real Brazilian açaí, made fresh one bowl at a time",
+  heroLede:"Thick, cold and never watered down. Every bowl loaded with banana, strawberry, blueberry, granola and honey.",
+  pillOrganic:"🌿 Organic açaí", pill1:"🌱 Gluten-free granola", pill2:"🥜 Nut-free bowls", pillDairy:"🥛 Dairy-free", pill3:"💳 Cards & cash",
+  todayLabel:"Today you'll find us at", directions:"Get directions",
+  weekSummary:"See the full week",
+  acaiTitle:"So what <em>is</em> açaí, really?",
+  acaiP1:"<b>It starts 4,000 miles from here.</b> Deep in the Amazon, açaí grows in heavy purple clusters at the very top of slender palms — and it's still picked the old way, barefoot, one climb at a time.",
+  acaiP2:"Brazilians blend it thick and frozen. We pile it high with fruit and granola, and eat it with a spoon. It tastes like blackberry crossed with dark chocolate — earthy, ice-cold, a little wild.",
+  acaiP3:"<b>Back home, it's an everyday thing.</b> Some people have it before a long day, some after a workout, most just because it's good — loaded with antioxidants and healthy fats. And honestly? It just tastes incredible.",
+  menuTitle:"The menu", scoops2:"2 scoops", scoops3:"3 scoops",
+  includedTitle:"Every bowl includes", addonsTitle:"Add-ons",
+  storyTitle:"Our story",
+  storyQuote:"“We started Açaí Brasil SJ in April 2024, after eight years living in the United States. We wanted to bring something that's hugely popular back home in our culture — something healthy and tasty at the same time.”",
+  storyWho:"— The family behind Açaí Brasil SJ",
+  galleryTitle:"The real thing",
+  cateringTitle:"Bring us to your event",
+  cateringLede:"Birthdays, weddings, school events, corporate lunches. Tell us the date and roughly how many people, and we'll come back to you with a price.",
+  fName:"Your name", fPhone:"Phone or WhatsApp", fEmail:"Email", fDate:"Event date",
+  fGuests:"Roughly how many people?", fMsg:"Anything else we should know?", fSend:"Send inquiry",
+  footerLede:"Brazilian açaí, made fresh in San Jose.",
+  footerCatering:"Catering", footerMenu:"Menu", footerContact:"Contact us",
+  closedToday:"Not out today", backOn:"Next up:", backSoon:"Check Instagram for the next market.",
+  updated:"Updated", closedDay:"Not out", today:"TODAY",
+  allYear:"All year", mon:["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+  days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+ },
+ es:{
+  family:"Negocio familiar y local",
+  heroTitle:"Açaí brasileño de verdad, hecho al momento, un bowl a la vez",
+  heroLede:"Espeso, frío y nunca aguado. Cada bowl con plátano, fresa, arándano, granola y miel.",
+  pillOrganic:"🌿 Açaí orgánico", pill1:"🌱 Granola sin gluten", pill2:"🥜 Bowls sin nueces", pillDairy:"🥛 Sin lácteos", pill3:"💳 Tarjeta y efectivo",
+  todayLabel:"Hoy nos encuentras en", directions:"Cómo llegar",
+  weekSummary:"Ver la semana completa",
+  acaiTitle:"¿Y qué <em>es</em> el açaí, en realidad?",
+  acaiP1:"<b>Empieza a 6.000 km de aquí.</b> En lo profundo del Amazonas, el açaí crece en racimos morados en lo más alto de palmeras delgadas — y todavía se cosecha como siempre: descalzo, subiendo una por una.",
+  acaiP2:"En Brasil lo batimos espeso y congelado. Lo llenamos de fruta y granola, y lo comemos con cuchara. Sabe a mora con chocolate negro — terroso, helado, un poco salvaje.",
+  acaiP3:"<b>Allá es cosa de todos los días.</b> Unos lo toman antes de una jornada larga, otros después de entrenar, y muchos simplemente porque les gusta — lleno de antioxidantes y grasas buenas. Y sinceramente: sabe increíble.",
+  menuTitle:"El menú", scoops2:"2 bolas", scoops3:"3 bolas",
+  includedTitle:"Cada bowl incluye", addonsTitle:"Extras",
+  storyTitle:"Nuestra historia",
+  storyQuote:"«Empezamos Açaí Brasil SJ en abril de 2024, después de ocho años viviendo en Estados Unidos. Queríamos traer algo muy popular en nuestra cultura — algo saludable y sabroso a la vez.»",
+  storyWho:"— La familia de Açaí Brasil SJ",
+  galleryTitle:"Lo auténtico",
+  cateringTitle:"Llévanos a tu evento",
+  cateringLede:"Cumpleaños, bodas, eventos escolares, almuerzos de empresa. Dinos la fecha y cuántas personas, y te damos un precio.",
+  fName:"Tu nombre", fPhone:"Teléfono o WhatsApp", fEmail:"Correo electrónico", fDate:"Fecha del evento",
+  fGuests:"¿Cuántas personas aproximadamente?", fMsg:"¿Algo más que debamos saber?", fSend:"Enviar solicitud",
+  footerLede:"Açaí brasileño, recién hecho en San José.",
+  footerCatering:"Eventos", footerMenu:"Menú", footerContact:"Contáctanos",
+  closedToday:"Hoy no salimos", backOn:"Próximo:", backSoon:"Mira Instagram para el próximo mercado.",
+  updated:"Actualizado", closedDay:"No salimos", today:"HOY",
+  allYear:"Todo el año", mon:["","Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"],
+  days:["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"]
+ }
+};
+
+/* ═════════ ENGINE ═════════ */
+let LANG=(navigator.language||"en").toLowerCase().startsWith("es")?"es":"en";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function pacific(){
+  const p=Object.fromEntries(new Intl.DateTimeFormat("en-CA",{timeZone:CONFIG.timezone,
+    year:"numeric",month:"2-digit",day:"2-digit",weekday:"short"})
+    .formatToParts(new Date()).map(x=>[x.type,x.value]));
+  return {iso:`${p.year}-${p.month}-${p.day}`, month:parseInt(p.month,10),
+          dow:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday)};
+}
+function parseCsv(t){
+  const rows=[];let row=[],cell="",q=false;
+  for(let i=0;i<t.length;i++){const c=t[i];
+    if(q){if(c==='"'&&t[i+1]==='"'){cell+='"';i++;}else if(c==='"'){q=false;}else cell+=c;}
+    else if(c==='"')q=true; else if(c===','){row.push(cell);cell="";}
+    else if(c==='\n'){row.push(cell);rows.push(row);row=[];cell="";}
+    else if(c!=='\r')cell+=c;}
+  if(cell||row.length){row.push(cell);rows.push(row);}
+  return rows.filter(r=>r.some(v=>v.trim()!==""));
+}
+/* Google writes the response timestamp as a bare local string in the SHEET's timezone, carrying no
+   offset. Handing that straight to new Date() lets the VISITOR's clock decide what day it is, which
+   silently drops the override for anyone east of Pacific and shows a wrong "Updated" time to
+   everyone outside it. So: read the wall clock off the string, then anchor it to CONFIG.timezone.
+   This assumes the responses Sheet is set to Pacific (File > Settings > Time zone). */
+function tzOffset(iso){
+  const d=new Date(iso+"T12:00:00Z");            // noon UTC, safely clear of DST switchovers
+  const s=new Intl.DateTimeFormat("en-US",{timeZone:CONFIG.timezone,timeZoneName:"longOffset"}).format(d);
+  return (s.match(/GMT([+-]\d{2}:\d{2})/)||[])[1]||"-08:00";
+}
+function sheetStamp(v){
+  const s=String(v||"").trim();
+  const m=s.match(/^(?:(\d{4})-(\d{1,2})-(\d{1,2})|(\d{1,2})\/(\d{1,2})\/(\d{4}))[ T,]+(\d{1,2}):(\d{2})/);
+  if(!m) return null;
+  const p=n=>String(n).padStart(2,"0");
+  const iso=m[1]?`${m[1]}-${p(m[2])}-${p(m[3])}`:`${m[6]}-${p(m[4])}-${p(m[5])}`;
+  let h=+m[7]; const tail=s.slice(m[0].length);
+  if(/p\.?m/i.test(tail)&&h<12) h+=12;
+  if(/a\.?m/i.test(tail)&&h===12) h=0;
+  const d=new Date(`${iso}T${p(h)}:${m[8]}:00${tzOffset(iso)}`);
+  return isNaN(d)?null:{iso,at:d};
+}
+async function fetchOverride(todayIso){
+  if(!CONFIG.sheetCsvUrl) return null;
+  try{
+    const ctrl=new AbortController(); const timer=setTimeout(()=>ctrl.abort(),CONFIG.fetchTimeoutMs);
+    const res=await fetch(CONFIG.sheetCsvUrl,{signal:ctrl.signal,cache:"no-store"});
+    clearTimeout(timer); if(!res.ok) return null;
+    const rows=parseCsv(await res.text()); if(rows.length<2) return null;
+    const head=rows[0].map(h=>h.trim().toLowerCase()), col=f=>head.findIndex(h=>h.includes(f));
+    const iSpot=col("where"), iHours=col("hour"), iOther=col("else");
+    let hit=null;
+    for(const r of rows.slice(1)){
+      const ts=sheetStamp(r[0]); if(!ts) continue;
+      /* Pick today's LATEST submission, not simply the lowest matching row. Forms appends in time
+         order so these normally agree, but a hand-sorted or hand-edited sheet would otherwise
+         resurrect a stale row. Ties keep the lower row, which preserves the old behaviour. */
+      if(ts.iso===todayIso && (!hit || ts.at>=hit.st)) hit={r,st:ts.at};
+    }
+    if(!hit) return null;
+    const raw=(hit.r[iSpot]||"").trim(); if(!raw) return null;
+    const closed=/not open|closed|fechado|cerrado/i.test(raw);
+    const other=/somewhere else|other|outro|otro/i.test(raw);
+    return {closed,at:hit.st,
+      stops:closed?[]:[{spot:other?(hit.r[iOther]||"").trim():raw,hours:(hit.r[iHours]||"").trim()}]};
+  }catch{return null;}
+}
+const timeStr=d=>new Intl.DateTimeFormat(LANG==="es"?"es-US":"en-US",
+  {timeZone:CONFIG.timezone,hour:"numeric",minute:"2-digit"}).format(d);
+const inSeason=(s,m)=>{ if(!s.season) return true;
+  const [a,b]=s.season; return a<=b ? (m>=a&&m<=b) : (m>=a||m<=b); };
+const openStops=(w,m)=>((w&&w.stops)||[]).filter(s=>inSeason(s,m));
+/* Every stop is labelled, so "will they be there in December?" is answered on the row itself. */
+const seasonTag=(s,t)=>s.season?`${t.mon[s.season[0]]}–${t.mon[s.season[1]]}`:t.allYear;
+const nextOpen=(dow,m)=>{for(let i=1;i<=7;i++){const d=WEEK.find(w=>w.dow===(dow+i)%7);
+  const st=openStops(d,m); if(st.length) return {d,stops:st,dow:(dow+i)%7};} return null;};
+
+function stopHtml(s,t){
+  const info=SPOTS[s.spot];
+  return `<div class="stop"><p class="spot">${esc(s.spot)}</p>
+    ${info?`<p class="addr">${esc(info.area)}</p>`:""}
+    ${s.hours?`<span class="hours">${esc(s.hours)}</span>`:""}
+    ${info?`<div><a class="btn btn-lime btn-block" href="${info.maps}" rel="noopener">${esc(t.directions)}</a></div>`:""}
+  </div>`;
+}
+function renderToday(box,ov,dow,month){
+  const t=T[LANG], def={stops:openStops(WEEK.find(w=>w.dow===dow),month)};
+  box.classList.remove("skeleton","is-closed");
+  if(ov&&ov.closed){                                    // 2 — he said not out
+    const n=nextOpen(dow,month); box.classList.add("is-closed");
+    box.innerHTML=`<div class="label">${esc(t.days[dow])}</div>
+      <p class="spot">${esc(t.closedToday)}</p>
+      <p class="soft">${n?`${esc(t.backOn)} ${esc(t.days[n.dow])} — ${esc(n.stops[0].spot)}`:esc(t.backSoon)}</p>
+      <p class="stamp">${esc(t.updated)} ${esc(timeStr(ov.at))}</p>`; return;
+  }
+  if(ov&&ov.stops.length&&ov.stops[0].spot){            // 1 — confirmed today
+    box.innerHTML=`<div class="label">${esc(t.today)} · ${esc(t.days[dow].toUpperCase())}</div>
+      ${ov.stops.map(s=>stopHtml(s,t)).join("")}
+      <p class="stamp">${esc(t.updated)} ${esc(timeStr(ov.at))}</p>`; return;
+  }
+  if(def.stops.length){                                  // 3 & 4 — hedged default
+    box.innerHTML=`<div class="label">${esc(t.days[dow])}</div>
+      ${def.stops.map(s=>stopHtml(s,t)).join("")}`;
+  }else{
+    const n=nextOpen(dow,month); box.classList.add("is-closed");
+    box.innerHTML=`<div class="label">${esc(t.days[dow])}</div>
+      <p class="spot">${esc(t.closedToday)}</p>
+      <p class="soft">${n?`${esc(t.backOn)} ${esc(t.days[n.dow])} — ${esc(n.stops[0].spot)}, ${esc(n.stops[0].hours)}`:esc(t.backSoon)}</p>`;
+  }
+}
+function renderWeek(dow,month){
+  const t=T[LANG];
+  document.getElementById("weekList").innerHTML=WEEK.map(w=>{
+    const stops=openStops(w,month);
+    const shut=!stops.length;
+    const row=(name,time,tag,seasonal)=>`<span class="st"><span class="nm">${name}${tag?`<span class="seas${seasonal?"":" all"}">${esc(tag)}</span>`:""}</span><span class="tm">${time}</span></span>`;
+    const body=`<span class="stops">${shut?row(esc(t.closedDay),"—"):
+        stops.map(s=>row(esc(s.spot),esc(s.hours),seasonTag(s,t),!!s.season)).join("")}</span>`;
+    return `<li class="${w.dow===dow?"is-today":""} ${shut?"is-shut":""}">
+              <span class="day">${esc(t.days[w.dow])}</span>${body}</li>`;}).join("");
+}
+function renderMenu(){
+  document.getElementById("chips").innerHTML=INCLUDED[LANG].map(i=>`<span class="chip">${esc(i)}</span>`).join("");
+  document.getElementById("benefits").innerHTML=BENEFITS[LANG].map(i=>`<span class="chip">${esc(i)}</span>`).join("");
+  document.getElementById("addons").innerHTML=ADDONS.map(a=>
+    `<div class="item"><span>${esc(a[LANG])}</span><span class="pr">${esc(a.p)}</span></div>`).join("");
+}
+function applyStatic(){
+  const t=T[LANG]; document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{if(t[el.dataset.i18n])el.textContent=t[el.dataset.i18n];});
+  /* authored copy only — never user input — so markup is safe here */
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{if(t[el.dataset.i18nHtml])el.innerHTML=t[el.dataset.i18nHtml];});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===LANG)));
+}
+async function render(){
+  const {iso,dow,month}=pacific();
+  applyStatic(); renderWeek(dow,month); renderMenu();
+  const box=document.getElementById("today");
+  renderToday(box,null,dow,month);
+  const ov=await fetchOverride(iso);
+  if(ov) renderToday(box,ov,dow,month);
+}
+document.querySelectorAll(".lang button").forEach(b=>
+  b.addEventListener("click",()=>{LANG=b.dataset.lang;render();}));
+document.getElementById("yr").textContent=
+  new Intl.DateTimeFormat("en",{timeZone:CONFIG.timezone,year:"numeric"}).format(new Date());
+
+
+/* build notes visible only at index.html#todo */
+const notes=()=>document.body.classList.toggle("shownotes",location.hash==="#todo");
+addEventListener("hashchange",notes); notes();
+
+/* The number is not rendered until someone asks for it. Note: it still sits in CONFIG.phone
+   and in the JSON-LD below, so this hides it from the page, not from a determined scraper. */
+const phoneBtn=document.getElementById("phoneBtn");
+if(phoneBtn) phoneBtn.addEventListener("click",()=>{
+  if(!CONFIG.phone) return;
+  const a=document.createElement("a");
+  a.href="tel:+1"+CONFIG.phone.replace(/\D/g,"");
+  a.textContent=CONFIG.phone; a.className="phone-out";
+  phoneBtn.replaceWith(a);
+});
+
+render();
+</script>
+</body>
+</html>
