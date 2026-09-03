@@ -1,4 +1,32 @@
 # acaibrasilsj.com
+**Status:** Delivered · Paid client engagement · 2026
+
+> **Client engagement** — built and shipped as paid work for Açaí Brasil SJ, a family-run
+> Brazilian açaí business working a trailer and farmers market stalls across San Jose
+> and the South Bay.
+
+**The brief:** Need a website and  that should show where the trailer will be this week and lets a customer submit a catering request.
+
+**The judgment call:** the obvious build was a CMS with a hosting plan and a monthly bill.
+But the owners don't need a CMS — they need to change a schedule from a phone, between
+markets. So: one self-contained HTML file, with the weekly schedule read from a Google
+Sheet they already keep. They edit a row; the site updates. No framework, no build step,
+no npm, no dependencies, and no recurring cost to the client.
+
+**What's in it:** bilingual EN/ES, a two-layer schedule with seasonality filtering,
+self-hosted fonts, JSON-LD structured data for local search, deployed to Cloudflare
+via GitHub Actions.
+
+**Live:**
+
+### Client feedback
+
+> "Gayithri is an AI Engineer who actually listens and delivers. As a food truck owner, I am non-technical, but she took my vision and handled all the tech and AI integration seamlessly and built a stunning website for my mobile acai business. She is very skilled, thorough and is very easy to work with. Highly recommend her!"
+
+<sub>Verified on my <a href="https://www.upwork.com/freelancers/gayithrip">Upwork profile</a> — 100% Job Success · 5.0 rating · Rising Talent.</sub>
+<sub>— NAME, Açaí Brasil SJ</sub>
+<br>
+<sub>Code by Gayithri Ponnapalli. Photography, logo and branding belong to the client.</sub>
 
 Website for **Açaí Brasil SJ**, a family owned Brazilian açaí bowl business operating from a
 trailer and a farmers market stall across San Jose and the South Bay.
