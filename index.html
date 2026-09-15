@@ -226,6 +226,10 @@ details.week li.is-shut{opacity:.5}
 .bowl .sc{opacity:.85;font-size:15px;margin:0}
 .card{background:#fff;border:1.5px solid var(--line);border-radius:var(--r);padding:22px}
 .card + .card{margin-top:14px}
+/* menu group headings (Açaí bowls / Açaí smoothies) need breathing
+   room above them, since h1-h3 have no top margin site-wide */
+.menu-h{margin-top:34px}
+.menu-h:first-of-type{margin-top:0}
 .card .chip{background:var(--lime);color:#213B00;border:none}
 .item{display:flex;justify-content:space-between;gap:14px;padding:10px 0;align-items:baseline}
 .item + .item{border-top:1px dashed var(--line)}
@@ -328,6 +332,7 @@ body.shownotes .todo{display:block}
 <section id="menu">
   <div class="wrap">
     <h2 class="center" data-i18n="menuTitle">The menu</h2>
+    <h3 class="center menu-h" data-i18n="bowlsTitle">Açaí bowls</h3>
     <div class="bowls">
       <div class="bowl"><div class="sz">12 oz</div><div class="pr">$12</div>
         <p class="sc" data-i18n="scoops2">2 scoops</p></div>
@@ -337,6 +342,11 @@ body.shownotes .todo{display:block}
     <div class="card">
       <h3 data-i18n="includedTitle">Every bowl includes</h3>
       <div class="chips" id="chips"></div>
+    </div>
+    <h3 class="center menu-h" data-i18n="smoothieTitle">Açaí smoothies</h3>
+    <div class="bowls">
+      <div class="bowl"><div class="sz">16 oz</div><div class="pr">$12</div>
+        <p class="sc" data-i18n="smoothieIncl">Banana + strawberry</p></div>
     </div>
     <div class="card">
       <h3 data-i18n="addonsTitle">Add-ons</h3>
@@ -379,10 +389,10 @@ body.shownotes .todo{display:block}
     <div class="gallery">
       <img src="img/01.jpg" alt="Açaí bowl with strawberries, blueberries and granola" loading="lazy">
       <img src="img/02.jpg" alt="Açaí Brasil SJ bowl topped with peanut butter (contains peanuts)" loading="lazy">
-      <img src="img/03.jpg" alt="The Açaí Brasil SJ truck" loading="lazy">
+      <img src="img/smoothie-acaibrasil.jpg" alt="Açaí Brasil SJ smoothie in a branded cup, surrounded by green leaves" loading="lazy">
       <img src="img/04.jpg" alt="Açaí bowl held up with fresh bananas behind" loading="lazy">
       <img src="img/05.jpg" alt="The Açaí Brasil SJ stall at a farmers market" loading="lazy">
-      <img src="img/06.jpg" alt="Açaí bowl in front of the Açaí Brasil SJ sign" loading="lazy">
+      <img src="img/03.jpg" alt="The Açaí Brasil SJ truck" loading="lazy">
     </div>
   </div>
 </section>
@@ -520,6 +530,7 @@ const T = {
   acaiP3:"<b>Back home, it's an everyday thing.</b> Some people have it before a long day, some after a workout, most just because it's good — loaded with antioxidants and healthy fats. And honestly? It just tastes incredible.",
   menuTitle:"The menu", scoops2:"2 scoops", scoops3:"3 scoops",
   includedTitle:"Every bowl includes", addonsTitle:"Add-ons",
+  bowlsTitle:"Açaí bowls", smoothieTitle:"Açaí smoothies", smoothieIncl:"Banana + strawberry",
   storyTitle:"Our story",
   storyQuote:"“We started Açaí Brasil SJ in April 2024, after eight years living in the United States. We wanted to bring something that's hugely popular back home in our culture — something healthy and tasty at the same time.”",
   storyWho:"— The family behind Açaí Brasil SJ",
@@ -548,6 +559,7 @@ const T = {
   acaiP3:"<b>Allá es cosa de todos los días.</b> Unos lo toman antes de una jornada larga, otros después de entrenar, y muchos simplemente porque les gusta — lleno de antioxidantes y grasas buenas. Y sinceramente: sabe increíble.",
   menuTitle:"El menú", scoops2:"2 bolas", scoops3:"3 bolas",
   includedTitle:"Cada bowl incluye", addonsTitle:"Extras",
+  bowlsTitle:"Bowls de açaí", smoothieTitle:"Smoothies de açaí", smoothieIncl:"Plátano + fresa",
   storyTitle:"Nuestra historia",
   storyQuote:"«Empezamos Açaí Brasil SJ en abril de 2024, después de ocho años viviendo en Estados Unidos. Queríamos traer algo muy popular en nuestra cultura — algo saludable y sabroso a la vez.»",
   storyWho:"— La familia de Açaí Brasil SJ",
